@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2024-02-01T00:51:23+01:00</updated><id>/feed.xml</id><title type="html">A linux crash course</title><subtitle>Learn Linux the fun way!</subtitle><entry><title type="html">Welcome to Jekyll!</title><link href="/jekyll/update/2023/11/30/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2023-11-30T16:09:05+01:00</published><updated>2023-11-30T16:09:05+01:00</updated><id>/jekyll/update/2023/11/30/welcome-to-jekyll</id><content type="html" xml:base="/jekyll/update/2023/11/30/welcome-to-jekyll.html"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
+
+<p>Jekyll requires blog post files to be named according to the following format:</p>
+
+<p><code class="language-plaintext highlighter-rouge">YEAR-MONTH-DAY-title.MARKUP</code></p>
+
+<p>Where <code class="language-plaintext highlighter-rouge">YEAR</code> is a four-digit number, <code class="language-plaintext highlighter-rouge">MONTH</code> and <code class="language-plaintext highlighter-rouge">DAY</code> are both two-digit numbers, and <code class="language-plaintext highlighter-rouge">MARKUP</code> is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.</p>
+
+<p>Jekyll also offers powerful support for code snippets:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
+<span class="k">end</span>
+<span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
+<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span></code></pre></figure>
+
+<p>Check out the <a href="https://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>]]></content><author><name></name></author><category term="jekyll" /><category term="update" /><summary type="html"><![CDATA[You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.]]></summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="/jekyll/update/2023/11/30/fuck-you.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2023-11-30T16:09:05+01:00</published><updated>2023-11-30T16:09:05+01:00</updated><id>/jekyll/update/2023/11/30/fuck-you</id><content type="html" xml:base="/jekyll/update/2023/11/30/fuck-you.html"><![CDATA[<p>FUCK YOU ALL</p>]]></content><author><name></name></author><category term="jekyll" /><category term="update" /><summary type="html"><![CDATA[FUCK YOU ALL]]></summary></entry><entry><title type="html">Linux Basics: Working with Files</title><link href="/tutorial/linux/2023/11/30/linux-basics.html" rel="alternate" type="text/html" title="Linux Basics: Working with Files" /><published>2023-11-30T00:00:00+01:00</published><updated>2023-11-30T00:00:00+01:00</updated><id>/tutorial/linux/2023/11/30/linux-basics</id><content type="html" xml:base="/tutorial/linux/2023/11/30/linux-basics.html"><![CDATA[<h1 id="linux-basics-working-with-files">Linux Basics: Working with Files</h1>
+
+<p>In this lesson, we’ll cover some basic Linux commands that are essential for file management: <code class="language-plaintext highlighter-rouge">ls</code>, <code class="language-plaintext highlighter-rouge">mv</code>, and <code class="language-plaintext highlighter-rouge">cp</code>.</p>
+
+<h2 id="the-ls-command">The <code class="language-plaintext highlighter-rouge">ls</code> Command</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">ls</code> command is used to list files and directories.</p>
+
+<p><strong>Example Usage:</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ls</span>            <span class="c"># Lists all files and directories in the current directory</span>
+<span class="nb">ls</span> <span class="nt">-l</span>         <span class="c"># Lists with detailed information</span>
+<span class="nb">ls</span> <span class="nt">-a</span>         <span class="c"># Lists all files, including hidden files</span>
+</code></pre></div></div>
+
+<h2 id="the-mv-command">The <code class="language-plaintext highlighter-rouge">mv</code> Command</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">mv</code> command is used to move or rename files and directories.</p>
+
+<p><strong>Example Usage:</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mv </span>file1.txt file2.txt <span class="c"># Renames file1.txt to file2.txt</span>
+<span class="nb">mv </span>file.txt <span class="nb">dir</span>/       <span class="c"># Moves file.txt to the directory 'dir'</span>
+</code></pre></div></div>
+
+<h2 id="the-cp-command">The <code class="language-plaintext highlighter-rouge">cp</code> Command</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">cp</code> command is used to copy files and directories.</p>
+
+<p><strong>Example Usage:</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cp </span>file1.txt file2.txt <span class="c"># Copies file1.txt to file2.txt</span>
+<span class="nb">cp</span> <span class="nt">-r</span> dir1 dir2        <span class="c"># Recursively copies dir1 to dir2 (including all files and subdirectories)</span>
+</code></pre></div></div>
+
+<p><strong>Note</strong>: Use the <code class="language-plaintext highlighter-rouge">-r</code> flag with <code class="language-plaintext highlighter-rouge">cp</code> and <code class="language-plaintext highlighter-rouge">mv</code> when dealing with directories.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>These commands are fundamental to navigating and managing files in a Linux environment. Practice using them to become more proficient in Linux file management.</p>]]></content><author><name></name></author><category term="tutorial" /><category term="linux" /><summary type="html"><![CDATA[Linux Basics: Working with Files]]></summary></entry></feed>

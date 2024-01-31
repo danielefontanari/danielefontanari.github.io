@@ -1,0 +1,1640 @@
+{"0": {
+    "doc": "Connection from a local machine",
+    "title": "Connection from a local machine",
+    "content": " ",
+    "url": "/0050%20Connection%20from%20a%20local%20machine.html",
+    
+    "relUrl": "/0050%20Connection%20from%20a%20local%20machine.html"
+  },"1": {
+    "doc": "Connection from a local machine",
+    "title": "Table of contents",
+    "content": ". | SSH | Terminal on Linux | Terminal on MacOS | Terminal on Windows 10/11 | Connecting to the server | Creating a shortcut (Linux and MacOS) | Passwordless connection (Linux and MacOS) | Creating a shortcut and setting up a passwordless connection (Windows 10/11) | . ",
+    "url": "/0050%20Connection%20from%20a%20local%20machine.html#table-of-contents",
+    
+    "relUrl": "/0050%20Connection%20from%20a%20local%20machine.html#table-of-contents"
+  },"2": {
+    "doc": "Connection from a local machine",
+    "title": "SSH",
+    "content": "In order to connect to the server from a local machine, you need to use the SSH protocol. The SSH protocol is a secure protocol that allows you to connect to a remote server and execute commands on it. The SSH protocol is used to connect to the server from a local machine. The way the SSH protocol can be exploited from a local machine depend on the operating system of the local machine, the first step is to open a terminal. ",
+    "url": "/0050%20Connection%20from%20a%20local%20machine.html#ssh",
+    
+    "relUrl": "/0050%20Connection%20from%20a%20local%20machine.html#ssh"
+  },"3": {
+    "doc": "Connection from a local machine",
+    "title": "Terminal on Linux",
+    "content": "You can open the terminal through the application menu or by pressing the following key combination: Ctrl + Alt + T . ",
+    "url": "/0050%20Connection%20from%20a%20local%20machine.html#terminal-on-linux",
+    
+    "relUrl": "/0050%20Connection%20from%20a%20local%20machine.html#terminal-on-linux"
+  },"4": {
+    "doc": "Connection from a local machine",
+    "title": "Terminal on MacOS",
+    "content": "You can open the terminal through the launchpad icon by typing Terminal in the search bar. ",
+    "url": "/0050%20Connection%20from%20a%20local%20machine.html#terminal-on-macos",
+    
+    "relUrl": "/0050%20Connection%20from%20a%20local%20machine.html#terminal-on-macos"
+  },"5": {
+    "doc": "Connection from a local machine",
+    "title": "Terminal on Windows 10/11",
+    "content": "You can open the terminal by pressing the following key combination: Win + R and typing cmd in the search bar. ",
+    "url": "/0050%20Connection%20from%20a%20local%20machine.html#terminal-on-windows-1011",
+    
+    "relUrl": "/0050%20Connection%20from%20a%20local%20machine.html#terminal-on-windows-1011"
+  },"6": {
+    "doc": "Connection from a local machine",
+    "title": "Connecting to the server",
+    "content": "To connect to the server, you need to use the ssh command, the command has the following syntax: . ssh [user]@[host] . Where: . | [user] - the user with which you want to connect to the server | [host] - the host to which you want to connect | . if this is the first time you are connecting to the server, you will be prompted to confirm the connection, you need to enter yes and press Enter. At this point you will be prompted to enter the password for the user with which you are connecting to the server, enter the password and press Enter. In the case of Calculco the host is calculco.univ-littoral.fr (or pcsdata.univ-littoral.fr, more on this later) and the user is the one you created when you created your account on Calculco (usually the first letter of your name followed by your last name): . ssh dfontanari@calculco.univ-littoral.fr . ",
+    "url": "/0050%20Connection%20from%20a%20local%20machine.html#connecting-to-the-server",
+    
+    "relUrl": "/0050%20Connection%20from%20a%20local%20machine.html#connecting-to-the-server"
+  },"7": {
+    "doc": "Connection from a local machine",
+    "title": "Creating a shortcut (Linux and MacOS)",
+    "content": "Since you will be possibily connecting often to the server, it is useful to create a shortcut to connect to the server, this can be done by creating a file called config in the .ssh folder in your home directory. Later we will learn how to create files using the terminal, for now ask the instructor for help if needed. The file config must have the following content: . Host calculco HostName calculco.univ-littoral.fr User [user] Host pcsdata HostName pcsdata.univ-littoral.fr User [user] . Where [user] is the user with which you want to connect to the server. Once the file is created, you can connect to the server by typing the following command: . ssh calculco . ",
+    "url": "/0050%20Connection%20from%20a%20local%20machine.html#creating-a-shortcut-linux-and-macos",
+    
+    "relUrl": "/0050%20Connection%20from%20a%20local%20machine.html#creating-a-shortcut-linux-and-macos"
+  },"8": {
+    "doc": "Connection from a local machine",
+    "title": "Passwordless connection (Linux and MacOS)",
+    "content": "If you don’t want to enter your password every time you connect to the server, you can use the ssh-keygen command to generate a pair of keys, one public and one private, the public key will be copied to the server and the private key will be stored on your local machine. In the terminal, type the following command: . ssh-keygen . You will be asked to enter a file name, press Enter to use the default file name. You will then be asked to enter a passphrase, press Enter to leave the passphrase empty. You will then be asked to confirm the passphrase, press Enter to leave the passphrase empty. at this point the keys will be generated and you will be able to connect to the server without entering the password. In order to do so you must issue the following command: . ssh-copy-id calculco . You will be asked to enter the password for the user with which you are connecting to the server, enter the password and press Enter. At this point you will be able to connect to the server without entering the password by only typing the following command: . ssh calculco . ",
+    "url": "/0050%20Connection%20from%20a%20local%20machine.html#passwordless-connection-linux-and-macos",
+    
+    "relUrl": "/0050%20Connection%20from%20a%20local%20machine.html#passwordless-connection-linux-and-macos"
+  },"9": {
+    "doc": "Connection from a local machine",
+    "title": "Creating a shortcut and setting up a passwordless connection (Windows 10/11)",
+    "content": "In Windows you can create a config file in the .ssh folder in your home directory. However I am not aware of a simple procedure that allows native passwordless connection (Maybe M. Dhont knows one), you can however install WSL (Windows Subsystem for Linux) and follow the procedure for Linux. Otherwise you can use a third party app like MobaXterm that will emulate a Linux terminal and allows you to follow the procedure for Linux and MacOS. ",
+    "url": "/0050%20Connection%20from%20a%20local%20machine.html#creating-a-shortcut-and-setting-up-a-passwordless-connection-windows-1011",
+    
+    "relUrl": "/0050%20Connection%20from%20a%20local%20machine.html#creating-a-shortcut-and-setting-up-a-passwordless-connection-windows-1011"
+  },"10": {
+    "doc": "The front-end and data transfer machines",
+    "title": "The front-end and data transfer machines",
+    "content": " ",
+    "url": "/0100%20The%20front-end%20and%20data%20transfer.html",
+    
+    "relUrl": "/0100%20The%20front-end%20and%20data%20transfer.html"
+  },"11": {
+    "doc": "The front-end and data transfer machines",
+    "title": "Table of contents",
+    "content": ". | Overview | Introduction | calculco | pcsdata | . ",
+    "url": "/0100%20The%20front-end%20and%20data%20transfer.html#table-of-contents",
+    
+    "relUrl": "/0100%20The%20front-end%20and%20data%20transfer.html#table-of-contents"
+  },"12": {
+    "doc": "The front-end and data transfer machines",
+    "title": "Overview",
+    "content": "The computing platform of ULCO, named CalcUlco, aims to pool computing resources within the institution. It is managed by the pôle Calcul Scientifique of the Service Commun du Système d’Information of ULCO. This platform is open to all faculty, technical staff, and students of the university who are involved in a scientific research project requiring intensive computing. Once connected to the front-end node you will be facing a Linux system, however the shared nature of the enviroment some care should be taken in its usage . ",
+    "url": "/0100%20The%20front-end%20and%20data%20transfer.html#overview",
+    
+    "relUrl": "/0100%20The%20front-end%20and%20data%20transfer.html#overview"
+  },"13": {
+    "doc": "The front-end and data transfer machines",
+    "title": "Introduction",
+    "content": "Our platform features several machines, two of which are externally accessible: calculco and pcsdata. Each serves a unique purpose. ",
+    "url": "/0100%20The%20front-end%20and%20data%20transfer.html#introduction",
+    
+    "relUrl": "/0100%20The%20front-end%20and%20data%20transfer.html#introduction"
+  },"14": {
+    "doc": "The front-end and data transfer machines",
+    "title": "calculco",
+    "content": "calculco is the gateway to our computing system, designed specifically for launching computations. Upon login, you’ll see a welcome message: . Linux calculco 5.10.0-21-amd64 #1 SMP Debian 5.10.162-1 (2023-01-21) x86_64 Last login: Wed Dec 13 14:38:13 2023 from 192.168.144.177 ___ _____ _ ___ _ _ _ ___ _____ ( _`\\ ( _ )( ) ( _`\\ ( ) ( )( ) ( _`\\ ( _ ) | ( (_)| (_) || | ( (_)| || | ( (_)| ( ) | | _ | _ || _ | _ | || _ | _ | | | (_( )| ||_( )| (_( )| (_) ||_( )| (_( )| (_) | (____/'(_) (_)(____/'(____/'(_____)(____/'(____/'(_____) Last Login....: mer. déc. 13 15:02:47 from 192.168.144.241 Uptime........: 40 days 0 hours 37 minutes 5 seconds Load..........: 1.18 (1minute) 1.11 (5minutes) 1.06 (15minutes) Memory MB.....: 32064 Used: 2885 Free: 299 Free Swap: 321 Swap In Use: 61034 Disk Usage....: You're using 56488MB (max 102400MB) in /nfs/home/lpca/dfontanari SSH Logins....: There are currently min, users logged in Processes.....: 688 total running of which 9 are yours Weather.......: Calais 9°C, Cloudy dfontanari@calculco:~$ . This is your starting point to interact with the system using commands we will explore in this course. You can also use this machine to launch computations, and we’ll explore that in a later lesson. Remember, calculco is a front-end with limited computational capabilities. Refrain from performing computations here. We’ll explore job submission to the cluster in a later lesson. For large file transfers, use pcsdata. ",
+    "url": "/0100%20The%20front-end%20and%20data%20transfer.html#calculco",
+    
+    "relUrl": "/0100%20The%20front-end%20and%20data%20transfer.html#calculco"
+  },"15": {
+    "doc": "The front-end and data transfer machines",
+    "title": "pcsdata",
+    "content": "For data transfers, use pcsdata. Upon login, you’ll be greeted with: . Linux pcsdata 5.10.0-21-amd64 #1 SMP Debian 5.10.162-1 (2023-01-21) x86_64 ____ ____ ____ ____ _ _____ _ | _ \\ / ___/ ___|| _ \\ / \\|_ _|/ \\ |_) | \\___ \\| |/ _ \\ | / _ \\ | __/|___ ___) |_| / ___ \\|/ ___ \\ |_| \\____|____/|____/_/ \\_\\_/_/ \\_ Last Login....: mer. déc. 13 15:09:21 from 192.168.144.241 Uptime........: 5 days 22 hours 20 minutes 56 seconds Load..........: 0.90 (1minute) 0.81 (5minutes) 0.74 (15minutes) Memory MB.....: 63905 Used: 1694 Free: 504 Free Cached: 74 Swap In Use: 19071 SSH Logins....: There are currently 1 users logged in Processes.....: 664 total running of which 7 are yours Weather.......: Calais 9°C, Cloudy Home Usage....: You're using 56488MB (max 102400MB) in /nfs/home/lpca/dfontanari Data Usage U..: Your group (lpca) is using 29% of 23T in /nfs/data/unprotected/lpca Data Usage P..: Your group (lpca) is using 2% of 2,0T in /nfs/data/protected/lpca dfontanari@pcsdata:~$ . pcsdata shares storage space with Calculco and is optimized for data transfer to and from your local machine, ensuring the front-end isn’t overloaded. ",
+    "url": "/0100%20The%20front-end%20and%20data%20transfer.html#pcsdata",
+    
+    "relUrl": "/0100%20The%20front-end%20and%20data%20transfer.html#pcsdata"
+  },"16": {
+    "doc": "Introduction to BASH",
+    "title": "Introduction to BASH",
+    "content": " ",
+    "url": "/0200%20Introduction%20to%20BASH.html",
+    
+    "relUrl": "/0200%20Introduction%20to%20BASH.html"
+  },"17": {
+    "doc": "Introduction to BASH",
+    "title": "Table of contents",
+    "content": ". | What is BASH? | Understanding the BASH Prompt | Executing Commands | Getting Help . | Navigating in man | Searching Within a Manual Page | Calling for Help in man | . | . ",
+    "url": "/0200%20Introduction%20to%20BASH.html#table-of-contents",
+    
+    "relUrl": "/0200%20Introduction%20to%20BASH.html#table-of-contents"
+  },"18": {
+    "doc": "Introduction to BASH",
+    "title": "What is BASH?",
+    "content": "BASH (Bourne Again SHell) is a command line interface (CLI) and scripting language used on various operating systems, particularly Linux and macOS. It is a powerful tool for interacting with your computer, automating tasks, and much more. ",
+    "url": "/0200%20Introduction%20to%20BASH.html#what-is-bash",
+    
+    "relUrl": "/0200%20Introduction%20to%20BASH.html#what-is-bash"
+  },"19": {
+    "doc": "Introduction to BASH",
+    "title": "Understanding the BASH Prompt",
+    "content": "When you open the terminal, you’ll typically see something like this: . dfontanari@calculco:~/Documents$ . This is called the BASH prompt. Let’s break it down: . | dfontanari: This is your username on the Linux system. | @: This symbol separates the username and the hostname. | calculco: The name of the machine you are working on. | ~/Documents: The Directory we are currently (more of this later) | $: This symbol indicates that you are a regular user. If it were a #, it would mean that you’re logged in as the root (administrator) user. | . ",
+    "url": "/0200%20Introduction%20to%20BASH.html#understanding-the-bash-prompt",
+    
+    "relUrl": "/0200%20Introduction%20to%20BASH.html#understanding-the-bash-prompt"
+  },"20": {
+    "doc": "Introduction to BASH",
+    "title": "Executing Commands",
+    "content": "To execute a command in BASH, you simply type the command and press Enter. For example, to display a message: . echo \"Hello, world!\" . This command will print Hello, world! on your terminal. in our terminal we should see this: . dfontanari@calculco:~$ echo \"Hello, world!\" Hello, world! dfontanari@calculco:~$ . As another example the command date will print the current date and time: . dfontanari@calculco:~$ date mar. 05 déc. 2023 13:46:26 CET dfontanari@calculco:~$ . the Linux terminal you are using is equipped with auto-completion, this means that if you type the first letters of a command and press the Tab key, the terminal will try to complete the command for you, if there are multiple possibilities, the terminal will show you the possibilities. also the history of the commands you have executed is saved, so if you press the Up and Down arrow keys you can navigate through the commands you have executed, you can also use the Ctrl + R / Ctrl + S key combinations to search for a command in the history or the command history to display the history of the commands you have executed. Linux is case-sensitive. This means that File.txt and file.txt are considered different files and echo and Echo are considered different commands. Always ensure that you’re using the correct case for commands and filenames. When calling the command date we are actually executing the binary date which is located in /bin/date (on calculco, more on path later). We obtain the same result if we execute the command . /bin/date . The system know where date is, because the directory is present in the PATH. To know which directories are included in the PATH execute the command: . printenv PATH . The different directories are separated by :. If a directory is not included in the PATH in order to execute a binary locate in that directory you must specify the full PATH. Finally if we want to execute a binary in the directory you currently are, you must write ./mybinary . Except if . is included in the PATH, in this case you must write: . mybinary . Finally observe that an executable in linux should not necessarily end in .exe, .com or .bat . ",
+    "url": "/0200%20Introduction%20to%20BASH.html#executing-commands",
+    
+    "relUrl": "/0200%20Introduction%20to%20BASH.html#executing-commands"
+  },"21": {
+    "doc": "Introduction to BASH",
+    "title": "Getting Help",
+    "content": "In Linux, you can often get help about a command by using the parameter --help or the man or info commands. For example: . date --help . This will show the help information for the date command. Alternatively, you can use: . man date . The man command brings up the manual page for date, which is a more detailed resource. While using the man command, it’s helpful to know a few basic navigation and search commands to efficiently find the information you need. Here’s a quick guide: . Navigating in man . | Scrolling: Use the Up and Down arrow keys to scroll line-by-line, or Page Up and Page Down to scroll page-by-page. | Exiting: Press q to quit and return to the command prompt. | . Searching Within a Manual Page . | Search for a Pattern: Press /, type your search pattern, and then press Enter. This will highlight the first occurrence of the pattern. | Navigate to Next/Previous Match: After searching, press n to go to the next match or Shift + n to go back to the previous match. | . Calling for Help in man . | Accessing Help: While in a man page, press h to view the help screen, which shows more navigation and command options. | . finally: . info date . The info command open a (sometime deeper than man) info page for date. ",
+    "url": "/0200%20Introduction%20to%20BASH.html#getting-help",
+    
+    "relUrl": "/0200%20Introduction%20to%20BASH.html#getting-help"
+  },"22": {
+    "doc": "The pwd Command",
+    "title": "The pwd Command",
+    "content": " ",
+    "url": "/0300%20The%20pwd%20Command.html",
+    
+    "relUrl": "/0300%20The%20pwd%20Command.html"
+  },"23": {
+    "doc": "The pwd Command",
+    "title": "Table of contents",
+    "content": ". | Introduction to pwd | How pwd Works | Using pwd in Conjunction with Other Commands | Getting Help with pwd | . ",
+    "url": "/0300%20The%20pwd%20Command.html#table-of-contents",
+    
+    "relUrl": "/0300%20The%20pwd%20Command.html#table-of-contents"
+  },"24": {
+    "doc": "The pwd Command",
+    "title": "Introduction to pwd",
+    "content": "The pwd command, which stands for “print working directory” is a fundamental tool in the Linux shell. It displays the full path of your current directory, helping you understand your location in the file system hierarchy. This command is particularly useful when you’re navigating through directories or when you want to confirm your current directory before performing file operations. ",
+    "url": "/0300%20The%20pwd%20Command.html#introduction-to-pwd",
+    
+    "relUrl": "/0300%20The%20pwd%20Command.html#introduction-to-pwd"
+  },"25": {
+    "doc": "The pwd Command",
+    "title": "How pwd Works",
+    "content": "When you enter pwd in the terminal, it outputs the absolute path of the directory you’re currently in. Here’s an example of its usage and output: . dfontanari@calculco:~/Documents$ pwd /nfs/home/lpca/dfontana/Documents . In this example, /nfs/home/lpca/dfontana/Documents is the absolute path to the current working directory. Absolute vs. Relative Paths . | An absolute path starts from the root directory (/) and provides the complete path to a file or directory. | A relative path starts from the current directory and is relative to where you currently are in the file system. | . ",
+    "url": "/0300%20The%20pwd%20Command.html#how-pwd-works",
+    
+    "relUrl": "/0300%20The%20pwd%20Command.html#how-pwd-works"
+  },"26": {
+    "doc": "The pwd Command",
+    "title": "Using pwd in Conjunction with Other Commands",
+    "content": "Understanding your current directory is crucial when using commands like cd (change directory) or ls (list directory contents). For instance, before copying a file with cp, you might use pwd to confirm you’re in the correct directory. ",
+    "url": "/0300%20The%20pwd%20Command.html#using-pwd-in-conjunction-with-other-commands",
+    
+    "relUrl": "/0300%20The%20pwd%20Command.html#using-pwd-in-conjunction-with-other-commands"
+  },"27": {
+    "doc": "The pwd Command",
+    "title": "Getting Help with pwd",
+    "content": "If you need more information about the pwd command, you can use the following: . | For a brief overview: pwd --help . | For detailed documentation: man pwd . info pwd . | . Each of these commands provides different levels of detail, from a quick summary to comprehensive documentation. ",
+    "url": "/0300%20The%20pwd%20Command.html#getting-help-with-pwd",
+    
+    "relUrl": "/0300%20The%20pwd%20Command.html#getting-help-with-pwd"
+  },"28": {
+    "doc": "The ls Command",
+    "title": "The ls Command",
+    "content": " ",
+    "url": "/0400%20The%20ls%20Command.html",
+    
+    "relUrl": "/0400%20The%20ls%20Command.html"
+  },"29": {
+    "doc": "The ls Command",
+    "title": "Table of contents",
+    "content": ". | Introduction to ls | How ls Works | Common ls Parameters | Getting Help with ls | . ",
+    "url": "/0400%20The%20ls%20Command.html#table-of-contents",
+    
+    "relUrl": "/0400%20The%20ls%20Command.html#table-of-contents"
+  },"30": {
+    "doc": "The ls Command",
+    "title": "Introduction to ls",
+    "content": "The ls command in Linux is a fundamental tool for file system navigation and management. It lists the contents of directories, helping users understand what files and subdirectories exist in their current location. ",
+    "url": "/0400%20The%20ls%20Command.html#introduction-to-ls",
+    
+    "relUrl": "/0400%20The%20ls%20Command.html#introduction-to-ls"
+  },"31": {
+    "doc": "The ls Command",
+    "title": "How ls Works",
+    "content": "By default, ls displays the contents of the current directory: . ls . Example output: . dfontanari@calculco:~/hematite$ ls inner.chk inner.gjf outer_far.chk outer_far.gjf outer_near.chk outer_near.gjf dfontanari@calculco:~/hematite$ . To list the contents of a specific directory, provide the directory path after the ls command: . ls /path/to/directory . Example: . dfontanari@calculco:~$ pwd /nfs/home/lpca/dfontanari dfontanari@calculco:~$ ls /nfs/home/lpca/dfontanari/hematite inner.chk inner.gjf outer_far.chk outer_far.gjf outer_near.chk outer_near.gjf dfontanari@calculco:~$ . In Linux, use the forward slash (/) as the directory separator, unlike DOS or Windows systems that use the backslash (\\). Relative paths start from the current directory without a leading forward slash. Use .. to reference the parent directory. For example, ls .. lists the contents of the parent directory. The tilde symbol (~) represents your home directory, so ls ~/Documents lists the contents of your Documents folder. ",
+    "url": "/0400%20The%20ls%20Command.html#how-ls-works",
+    
+    "relUrl": "/0400%20The%20ls%20Command.html#how-ls-works"
+  },"32": {
+    "doc": "The ls Command",
+    "title": "Common ls Parameters",
+    "content": "ls supports various parameters to alter its output: . | -a, --all: Include hidden files (starting with .) in the listing. ls -a . | -l: Use a long listing format, showing detailed file information. ls -l . | -h, --human-readable: Make file sizes human-readable (K, M, G). Use with -l. ls -lh . | -t: Sort files by modification time, newest first. ls -t . | -r: Reverse the order of the listing. ls -r . | -R, --recursive: List files in all subdirectories. ls -R . | . For a visual representation of the directory structure, consider using tree: . tree . The tree command shows the file system hierarchy in a tree format. Use --help, man and info for more options, like limiting the depth of the tree to three levels (-L 3) and showing only directories (-d): . tree -d -L 3 . Parameters can often be combined. For example, ls -lh and ls -l -h are equivalent. Parameters like -w or --width have multiple syntax forms, such as . ls -a -w 50 . ls -a -w50 . or . ls -a --width=50 . ",
+    "url": "/0400%20The%20ls%20Command.html#common-ls-parameters",
+    
+    "relUrl": "/0400%20The%20ls%20Command.html#common-ls-parameters"
+  },"33": {
+    "doc": "The ls Command",
+    "title": "Getting Help with ls",
+    "content": "For more information on the ls command: . | Brief overview: ls --help . | Detailed documentation: man ls . info ls . | . Each command provides different levels of detail, from a quick summary to comprehensive documentation. ",
+    "url": "/0400%20The%20ls%20Command.html#getting-help-with-ls",
+    
+    "relUrl": "/0400%20The%20ls%20Command.html#getting-help-with-ls"
+  },"34": {
+    "doc": "The cd Command",
+    "title": "The cd Command",
+    "content": " ",
+    "url": "/0500%20The%20cd%20Command.html",
+    
+    "relUrl": "/0500%20The%20cd%20Command.html"
+  },"35": {
+    "doc": "The cd Command",
+    "title": "Table of contents",
+    "content": ". | Introduction to cd | Using Absolute Paths | Returning to the Home Directory | Using Relative Paths | Using the Tilde (~) | Navigating to Other Users’ Directories | Returning to the Previous Directory | Getting Help with cd | . ",
+    "url": "/0500%20The%20cd%20Command.html#table-of-contents",
+    
+    "relUrl": "/0500%20The%20cd%20Command.html#table-of-contents"
+  },"36": {
+    "doc": "The cd Command",
+    "title": "Introduction to cd",
+    "content": "The cd command, standing for “change directory,” is essential for navigating the Linux file system. It allows you to move between directories. ",
+    "url": "/0500%20The%20cd%20Command.html#introduction-to-cd",
+    
+    "relUrl": "/0500%20The%20cd%20Command.html#introduction-to-cd"
+  },"37": {
+    "doc": "The cd Command",
+    "title": "Using Absolute Paths",
+    "content": "To change to a specific directory, provide the directory path: . cd /path/to/folder . This command moves you to the directory /path/to/folder. Note that this is an absolute path, starting from the root directory. ",
+    "url": "/0500%20The%20cd%20Command.html#using-absolute-paths",
+    
+    "relUrl": "/0500%20The%20cd%20Command.html#using-absolute-paths"
+  },"38": {
+    "doc": "The cd Command",
+    "title": "Returning to the Home Directory",
+    "content": "To return to your home directory, simply use cd without any arguments: . cd . ",
+    "url": "/0500%20The%20cd%20Command.html#returning-to-the-home-directory",
+    
+    "relUrl": "/0500%20The%20cd%20Command.html#returning-to-the-home-directory"
+  },"39": {
+    "doc": "The cd Command",
+    "title": "Using Relative Paths",
+    "content": "You can also navigate using relative paths. For example, if you are currently in /path/to, the command: . cd folder . changes your current directory to /path/to/folder. If you then execute: . cd ../directory . your current directory becomes /path/to/directory. To navigate up multiple levels, use multiple ../. For instance: . cd ../../in/the/forest . takes you to /path/in/the/forest. ",
+    "url": "/0500%20The%20cd%20Command.html#using-relative-paths",
+    
+    "relUrl": "/0500%20The%20cd%20Command.html#using-relative-paths"
+  },"40": {
+    "doc": "The cd Command",
+    "title": "Using the Tilde (~)",
+    "content": "The tilde symbol (~) is a shortcut for your home directory. For example: . cd ~/Desktop . changes to the Desktop directory within your home directory. cd support tab completion. For example, if you type cd ~/Doc and press Tab, the command line will autocomplete to cd ~/Document if Document is the only directory in your home directory that starts with Doc. If there are multiple directories that start with Doc, pressing Tab twice will show you the options. ",
+    "url": "/0500%20The%20cd%20Command.html#using-the-tilde-",
+    
+    "relUrl": "/0500%20The%20cd%20Command.html#using-the-tilde-"
+  },"41": {
+    "doc": "The cd Command",
+    "title": "Navigating to Other Users’ Directories",
+    "content": "Be mindful of permissions when attempting to access other users’ directories. For example: . cd ~anotheruser . attempts to move to the home directory of anotheruser. If you try to execute the command . cd ~someuser . where someuser is an user not belonging to your laboratory an error message will be shown: . -bash: cd: /nfs/home/lpca/dfontanari: Permission non accordée . Linux file permissions determine what you can and cannot access. In a shared environment like Calculco, you generally have full access to your home directory, limited access to directories of users in your group, and no access to others’ directories. ",
+    "url": "/0500%20The%20cd%20Command.html#navigating-to-other-users-directories",
+    
+    "relUrl": "/0500%20The%20cd%20Command.html#navigating-to-other-users-directories"
+  },"42": {
+    "doc": "The cd Command",
+    "title": "Returning to the Previous Directory",
+    "content": "Use cd - to return to the last directory you were in: . cd - . ",
+    "url": "/0500%20The%20cd%20Command.html#returning-to-the-previous-directory",
+    
+    "relUrl": "/0500%20The%20cd%20Command.html#returning-to-the-previous-directory"
+  },"43": {
+    "doc": "The cd Command",
+    "title": "Getting Help with cd",
+    "content": "cd is a shell builtin, so its documentation is found under shell builtins: . | For a brief overview, try: cd --help . | For detailed documentation, refer to: man builtins . info builtins . | . These commands provide varying levels of detail, from a quick summary to more comprehensive information. ",
+    "url": "/0500%20The%20cd%20Command.html#getting-help-with-cd",
+    
+    "relUrl": "/0500%20The%20cd%20Command.html#getting-help-with-cd"
+  },"44": {
+    "doc": "Understanding Storage Spaces on Calculco",
+    "title": "Understanding Storage Spaces on Calculco",
+    "content": " ",
+    "url": "/0550%20Understanding%20Storage%20Spaces%20on%20Calculco.html",
+    
+    "relUrl": "/0550%20Understanding%20Storage%20Spaces%20on%20Calculco.html"
+  },"45": {
+    "doc": "Understanding Storage Spaces on Calculco",
+    "title": "Table of contents",
+    "content": ". | Introduction | Home Directory | Data-Unprotected | Data-Protected | Scratch Space | Workflow Overview | . ",
+    "url": "/0550%20Understanding%20Storage%20Spaces%20on%20Calculco.html#table-of-contents",
+    
+    "relUrl": "/0550%20Understanding%20Storage%20Spaces%20on%20Calculco.html#table-of-contents"
+  },"46": {
+    "doc": "Understanding Storage Spaces on Calculco",
+    "title": "Introduction",
+    "content": "Calculco offers a variety of storage options, each tailored to different needs and use cases. ",
+    "url": "/0550%20Understanding%20Storage%20Spaces%20on%20Calculco.html#introduction",
+    
+    "relUrl": "/0550%20Understanding%20Storage%20Spaces%20on%20Calculco.html#introduction"
+  },"47": {
+    "doc": "Understanding Storage Spaces on Calculco",
+    "title": "Home Directory",
+    "content": "Your home directory, found at /nfs/home/laboratory/username (laboratory and username will be your specific identifiers), is a personal space with a modest capacity of 50GB. Accessible via the ~ shortcut, it’s ideal for storing configurations and temporary files, but not suitable for large datasets. ",
+    "url": "/0550%20Understanding%20Storage%20Spaces%20on%20Calculco.html#home-directory",
+    
+    "relUrl": "/0550%20Understanding%20Storage%20Spaces%20on%20Calculco.html#home-directory"
+  },"48": {
+    "doc": "Understanding Storage Spaces on Calculco",
+    "title": "Data-Unprotected",
+    "content": "Located at /nfs/data/unprotected/laboratory/username, this shared space offers 1TB to 224TB of storage, depending on your laboratory. It’s not backed up, so use it for temporary data needing processing. Access it through the ~/data-unprotected symbolic link (A symbolic link, also known as a symlink, is a type of file that serves as a reference or shortcut to another file or directory. It points to the original object location, allowing easy access without duplicating the actual object). ",
+    "url": "/0550%20Understanding%20Storage%20Spaces%20on%20Calculco.html#data-unprotected",
+    
+    "relUrl": "/0550%20Understanding%20Storage%20Spaces%20on%20Calculco.html#data-unprotected"
+  },"49": {
+    "doc": "Understanding Storage Spaces on Calculco",
+    "title": "Data-Protected",
+    "content": "A medium-sized, daily backed-up storage found at /nfs/data/protected/laboratory/username. It provides about 10% of the capacity of your data-unprotected space. Use ~/data-protected to securely store critical data. ",
+    "url": "/0550%20Understanding%20Storage%20Spaces%20on%20Calculco.html#data-protected",
+    
+    "relUrl": "/0550%20Understanding%20Storage%20Spaces%20on%20Calculco.html#data-protected"
+  },"50": {
+    "doc": "Understanding Storage Spaces on Calculco",
+    "title": "Scratch Space",
+    "content": "The scratch space, at /scratch/node/laboratory/username (node is formatted as orval##), is linked to computing nodes. It’s not backed up and is frequently cleared. Use this space for I/O operations during computations, transferring results to a more permanent location upon completion. ",
+    "url": "/0550%20Understanding%20Storage%20Spaces%20on%20Calculco.html#scratch-space",
+    
+    "relUrl": "/0550%20Understanding%20Storage%20Spaces%20on%20Calculco.html#scratch-space"
+  },"51": {
+    "doc": "Understanding Storage Spaces on Calculco",
+    "title": "Workflow Overview",
+    "content": ". | Data Upload: Use pcsdata to upload input data to data-unprotected. | Job Launch: From calculco, initiate a job on a computing node. | Computation: Transfer input data to the node’s scratch space. Configure your program to use scratch for speed and efficiency. | Troubleshooting: In case of failure, inspect scratch from calculco to diagnose and potentially resume the job. | Data Transfer: Post-computation, move output data from scratch to data-unprotected. Clean up scratch afterwards. | Data Download: Retrieve the output from data-unprotected via pcsdata. | Preservation: Store vital data in data-protected. | Cleanup: Remove unnecessary files from data-unprotected. | . Remember, these directories are accessible to all laboratory members. To keep a directory private: . # Create a private directory mkdir ~/data-unprotected/private_directory # Restrict access chmod go-rwx private_directory . ",
+    "url": "/0550%20Understanding%20Storage%20Spaces%20on%20Calculco.html#workflow-overview",
+    
+    "relUrl": "/0550%20Understanding%20Storage%20Spaces%20on%20Calculco.html#workflow-overview"
+  },"52": {
+    "doc": "Creating and Removing Directories",
+    "title": "Creating and Removing Directories",
+    "content": " ",
+    "url": "/0600%20Creating%20and%20Removing%20Directories.html",
+    
+    "relUrl": "/0600%20Creating%20and%20Removing%20Directories.html"
+  },"53": {
+    "doc": "Creating and Removing Directories",
+    "title": "Table of contents",
+    "content": ". | Introduction | Objectives | Creating Directories with mkdir | Basic Usage of mkdir | Creating Multiple Directories | Creating Nested Directories | Removing Directories with rmdir | Basic Usage of rmdir | Removing Nested Empty Directories | Best Practices and Common Mistakes | . ",
+    "url": "/0600%20Creating%20and%20Removing%20Directories.html#table-of-contents",
+    
+    "relUrl": "/0600%20Creating%20and%20Removing%20Directories.html#table-of-contents"
+  },"54": {
+    "doc": "Creating and Removing Directories",
+    "title": "Introduction",
+    "content": "Understanding how to effectively create and manage directories is a fundamental aspect of file system navigation in Linux. This chapter focuses on the mkdir and rmdir commands, which are used for creating new directories and removing existing ones, respectively. ",
+    "url": "/0600%20Creating%20and%20Removing%20Directories.html#introduction",
+    
+    "relUrl": "/0600%20Creating%20and%20Removing%20Directories.html#introduction"
+  },"55": {
+    "doc": "Creating and Removing Directories",
+    "title": "Objectives",
+    "content": ". | Learn to create directories using the mkdir command. | Understand how to remove directories with the rmdir command. | Explore options and best practices for directory management. | . ",
+    "url": "/0600%20Creating%20and%20Removing%20Directories.html#objectives",
+    
+    "relUrl": "/0600%20Creating%20and%20Removing%20Directories.html#objectives"
+  },"56": {
+    "doc": "Creating and Removing Directories",
+    "title": "Creating Directories with mkdir",
+    "content": "mkdir, short for “make directory,” is a command used to create new directories in the Linux file system. ",
+    "url": "/0600%20Creating%20and%20Removing%20Directories.html#creating-directories-with-mkdir",
+    
+    "relUrl": "/0600%20Creating%20and%20Removing%20Directories.html#creating-directories-with-mkdir"
+  },"57": {
+    "doc": "Creating and Removing Directories",
+    "title": "Basic Usage of mkdir",
+    "content": "The basic syntax for mkdir is: . mkdir [directory_name] . ",
+    "url": "/0600%20Creating%20and%20Removing%20Directories.html#basic-usage-of-mkdir",
+    
+    "relUrl": "/0600%20Creating%20and%20Removing%20Directories.html#basic-usage-of-mkdir"
+  },"58": {
+    "doc": "Creating and Removing Directories",
+    "title": "Creating Multiple Directories",
+    "content": "You can also create multiple directories at once: . mkdir [dir1] [dir2] [dir3] . ",
+    "url": "/0600%20Creating%20and%20Removing%20Directories.html#creating-multiple-directories",
+    
+    "relUrl": "/0600%20Creating%20and%20Removing%20Directories.html#creating-multiple-directories"
+  },"59": {
+    "doc": "Creating and Removing Directories",
+    "title": "Creating Nested Directories",
+    "content": "To create nested directories, use the -p option: . mkdir -p [parent_directory]/[child_directory] . ",
+    "url": "/0600%20Creating%20and%20Removing%20Directories.html#creating-nested-directories",
+    
+    "relUrl": "/0600%20Creating%20and%20Removing%20Directories.html#creating-nested-directories"
+  },"60": {
+    "doc": "Creating and Removing Directories",
+    "title": "Removing Directories with rmdir",
+    "content": "rmdir, which stands for “remove directory,” is used to delete empty directories. ",
+    "url": "/0600%20Creating%20and%20Removing%20Directories.html#removing-directories-with-rmdir",
+    
+    "relUrl": "/0600%20Creating%20and%20Removing%20Directories.html#removing-directories-with-rmdir"
+  },"61": {
+    "doc": "Creating and Removing Directories",
+    "title": "Basic Usage of rmdir",
+    "content": "The basic syntax for rmdir is: . rmdir [directory_name] . ",
+    "url": "/0600%20Creating%20and%20Removing%20Directories.html#basic-usage-of-rmdir",
+    
+    "relUrl": "/0600%20Creating%20and%20Removing%20Directories.html#basic-usage-of-rmdir"
+  },"62": {
+    "doc": "Creating and Removing Directories",
+    "title": "Removing Nested Empty Directories",
+    "content": "To remove nested empty directories, use rmdir with the -p option: . rmdir -p [parent_directory]/[child_directory] . ‘rmdir’ can only remove empty directories. If a directory contains files the rm command should be used . ",
+    "url": "/0600%20Creating%20and%20Removing%20Directories.html#removing-nested-empty-directories",
+    
+    "relUrl": "/0600%20Creating%20and%20Removing%20Directories.html#removing-nested-empty-directories"
+  },"63": {
+    "doc": "Creating and Removing Directories",
+    "title": "Best Practices and Common Mistakes",
+    "content": ". | Always check the current directory with pwd before creating or removing directories to avoid errors. | Be cautious with directory names and paths to prevent accidental deletion of important data. | Remember that rmdir only removes empty directories. Use rm -r with caution for non-empty directories. | . ",
+    "url": "/0600%20Creating%20and%20Removing%20Directories.html#best-practices-and-common-mistakes",
+    
+    "relUrl": "/0600%20Creating%20and%20Removing%20Directories.html#best-practices-and-common-mistakes"
+  },"64": {
+    "doc": "Creating files and Basic Text Editing",
+    "title": "Creating files and Basic Text Editing",
+    "content": " ",
+    "url": "/0700%20Creating%20files%20and%20Basic%20Text%20Editing.html",
+    
+    "relUrl": "/0700%20Creating%20files%20and%20Basic%20Text%20Editing.html"
+  },"65": {
+    "doc": "Creating files and Basic Text Editing",
+    "title": "Table of contents",
+    "content": ". | Introduction | Objectives | Creating Empty Files with touch | Updating Timestamps with touch | Changing Timestamps to a Specific Time | Creating Multiple Files | Basic Text Editing with nano | Opening a File in nano | Basic Navigation | Editing and Saving | Cutting or Copying and Pasting Text | Searching for Text | Best Practices and Common Mistakes | . ",
+    "url": "/0700%20Creating%20files%20and%20Basic%20Text%20Editing.html#table-of-contents",
+    
+    "relUrl": "/0700%20Creating%20files%20and%20Basic%20Text%20Editing.html#table-of-contents"
+  },"66": {
+    "doc": "Creating files and Basic Text Editing",
+    "title": "Introduction",
+    "content": "The touch command in Linux is versatile and commonly used for creating new empty files and updating file timestamps. Alongside touch, learning the basics of the nano text editor is essential for file content manipulation. This chapter explores how to use touch effectively and introduces basic text editing with nano. ",
+    "url": "/0700%20Creating%20files%20and%20Basic%20Text%20Editing.html#introduction",
+    
+    "relUrl": "/0700%20Creating%20files%20and%20Basic%20Text%20Editing.html#introduction"
+  },"67": {
+    "doc": "Creating files and Basic Text Editing",
+    "title": "Objectives",
+    "content": ". | Learn to create new empty files using touch. | Understand how to update the access and modification timestamps of files. | Discover the different uses of touch in file management and scripting. | Get acquainted with nano for basic text editing tasks. | . ",
+    "url": "/0700%20Creating%20files%20and%20Basic%20Text%20Editing.html#objectives",
+    
+    "relUrl": "/0700%20Creating%20files%20and%20Basic%20Text%20Editing.html#objectives"
+  },"68": {
+    "doc": "Creating files and Basic Text Editing",
+    "title": "Creating Empty Files with touch",
+    "content": "The primary use of touch is to create a new empty file: . touch [filename] . If the file already exists, touch won’t alter its content but will update its timestamp. ",
+    "url": "/0700%20Creating%20files%20and%20Basic%20Text%20Editing.html#creating-empty-files-with-touch",
+    
+    "relUrl": "/0700%20Creating%20files%20and%20Basic%20Text%20Editing.html#creating-empty-files-with-touch"
+  },"69": {
+    "doc": "Creating files and Basic Text Editing",
+    "title": "Updating Timestamps with touch",
+    "content": "touch can be used to update the access (atime) and modification (mtime) times of a file: . touch [filename] . This command updates both the access and modification times to the current time. ",
+    "url": "/0700%20Creating%20files%20and%20Basic%20Text%20Editing.html#updating-timestamps-with-touch",
+    
+    "relUrl": "/0700%20Creating%20files%20and%20Basic%20Text%20Editing.html#updating-timestamps-with-touch"
+  },"70": {
+    "doc": "Creating files and Basic Text Editing",
+    "title": "Changing Timestamps to a Specific Time",
+    "content": "You can explicitly set the timestamps of a file: . touch -t YYYYMMDDHHMM [filename] . ",
+    "url": "/0700%20Creating%20files%20and%20Basic%20Text%20Editing.html#changing-timestamps-to-a-specific-time",
+    
+    "relUrl": "/0700%20Creating%20files%20and%20Basic%20Text%20Editing.html#changing-timestamps-to-a-specific-time"
+  },"71": {
+    "doc": "Creating files and Basic Text Editing",
+    "title": "Creating Multiple Files",
+    "content": "touch can also be used to create multiple files at once: . touch [file1] [file2] [file3] . ",
+    "url": "/0700%20Creating%20files%20and%20Basic%20Text%20Editing.html#creating-multiple-files",
+    
+    "relUrl": "/0700%20Creating%20files%20and%20Basic%20Text%20Editing.html#creating-multiple-files"
+  },"72": {
+    "doc": "Creating files and Basic Text Editing",
+    "title": "Basic Text Editing with nano",
+    "content": "nano is a simple, easy-to-use text editor in Linux, ideal for beginners and quick file edits. ",
+    "url": "/0700%20Creating%20files%20and%20Basic%20Text%20Editing.html#basic-text-editing-with-nano",
+    
+    "relUrl": "/0700%20Creating%20files%20and%20Basic%20Text%20Editing.html#basic-text-editing-with-nano"
+  },"73": {
+    "doc": "Creating files and Basic Text Editing",
+    "title": "Opening a File in nano",
+    "content": "To open a file (or create a new one if it doesn’t exist) with nano, use: . nano [filename] . ",
+    "url": "/0700%20Creating%20files%20and%20Basic%20Text%20Editing.html#opening-a-file-in-nano",
+    
+    "relUrl": "/0700%20Creating%20files%20and%20Basic%20Text%20Editing.html#opening-a-file-in-nano"
+  },"74": {
+    "doc": "Creating files and Basic Text Editing",
+    "title": "Basic Navigation",
+    "content": ". | Use arrow keys to move the cursor. | Page Up and Page Down scroll through the file. | . ",
+    "url": "/0700%20Creating%20files%20and%20Basic%20Text%20Editing.html#basic-navigation",
+    
+    "relUrl": "/0700%20Creating%20files%20and%20Basic%20Text%20Editing.html#basic-navigation"
+  },"75": {
+    "doc": "Creating files and Basic Text Editing",
+    "title": "Editing and Saving",
+    "content": ". | Type directly to insert text. | To save changes, press Ctrl + O, then Enter. | To exit nano, press Ctrl + X. | . ",
+    "url": "/0700%20Creating%20files%20and%20Basic%20Text%20Editing.html#editing-and-saving",
+    
+    "relUrl": "/0700%20Creating%20files%20and%20Basic%20Text%20Editing.html#editing-and-saving"
+  },"76": {
+    "doc": "Creating files and Basic Text Editing",
+    "title": "Cutting or Copying and Pasting Text",
+    "content": ". | To cut a line, press Ctrl + K. | To copy a line, press Alt + 6. | To select a part of the text for cutting or copying, hold down the Alt key and use the arrow keys to highlight the desired text, then cut with Ctrl + K or copy with Alt + 6. | To paste the cut text, move the cursor to the desired location and press Ctrl + U. | . ",
+    "url": "/0700%20Creating%20files%20and%20Basic%20Text%20Editing.html#cutting-or-copying-and-pasting-text",
+    
+    "relUrl": "/0700%20Creating%20files%20and%20Basic%20Text%20Editing.html#cutting-or-copying-and-pasting-text"
+  },"77": {
+    "doc": "Creating files and Basic Text Editing",
+    "title": "Searching for Text",
+    "content": ". | To search for text, press Ctrl + W and enter the search term. | . ",
+    "url": "/0700%20Creating%20files%20and%20Basic%20Text%20Editing.html#searching-for-text",
+    
+    "relUrl": "/0700%20Creating%20files%20and%20Basic%20Text%20Editing.html#searching-for-text"
+  },"78": {
+    "doc": "Creating files and Basic Text Editing",
+    "title": "Best Practices and Common Mistakes",
+    "content": ". | Use touch for quickly creating test files or for initializing files in scripts. | Remember that touch cannot create directories; it’s only for files. | Avoid unintentionally overwriting timestamps of important files. | In nano, regularly save your work to prevent data loss. | Be cautious when cutting and pasting text to avoid unintentional deletions. | . ",
+    "url": "/0700%20Creating%20files%20and%20Basic%20Text%20Editing.html#best-practices-and-common-mistakes",
+    
+    "relUrl": "/0700%20Creating%20files%20and%20Basic%20Text%20Editing.html#best-practices-and-common-mistakes"
+  },"79": {
+    "doc": "Copying Files and Directories",
+    "title": "Copying Files and Directories",
+    "content": " ",
+    "url": "/0800%20Copying%20Files%20and%20Directories.html",
+    
+    "relUrl": "/0800%20Copying%20Files%20and%20Directories.html"
+  },"80": {
+    "doc": "Copying Files and Directories",
+    "title": "Table of contents",
+    "content": ". | Introduction | Objectives | Basic File Copying | Copying Directories | Interactive Copying | Best Practices and Common Mistakes | . ",
+    "url": "/0800%20Copying%20Files%20and%20Directories.html#table-of-contents",
+    
+    "relUrl": "/0800%20Copying%20Files%20and%20Directories.html#table-of-contents"
+  },"81": {
+    "doc": "Copying Files and Directories",
+    "title": "Introduction",
+    "content": "Understanding how to copy files and directories in Linux is crucial for effective file management. This chapter covers the cp command, which is used for copying files and directories. ",
+    "url": "/0800%20Copying%20Files%20and%20Directories.html#introduction",
+    
+    "relUrl": "/0800%20Copying%20Files%20and%20Directories.html#introduction"
+  },"82": {
+    "doc": "Copying Files and Directories",
+    "title": "Objectives",
+    "content": ". | Learn to copy files using the cp command. | Understand how to copy directories, including using the recursive option. | Explore options for preserving file attributes during copying. | . ",
+    "url": "/0800%20Copying%20Files%20and%20Directories.html#objectives",
+    
+    "relUrl": "/0800%20Copying%20Files%20and%20Directories.html#objectives"
+  },"83": {
+    "doc": "Copying Files and Directories",
+    "title": "Basic File Copying",
+    "content": "The basic syntax for copying files is: . cp [source] [destination] . ",
+    "url": "/0800%20Copying%20Files%20and%20Directories.html#basic-file-copying",
+    
+    "relUrl": "/0800%20Copying%20Files%20and%20Directories.html#basic-file-copying"
+  },"84": {
+    "doc": "Copying Files and Directories",
+    "title": "Copying Directories",
+    "content": "To copy directories, use the -r (recursive) option: . cp -r [source_directory] [destination_directory] . ",
+    "url": "/0800%20Copying%20Files%20and%20Directories.html#copying-directories",
+    
+    "relUrl": "/0800%20Copying%20Files%20and%20Directories.html#copying-directories"
+  },"85": {
+    "doc": "Copying Files and Directories",
+    "title": "Interactive Copying",
+    "content": "Use the -i option to prompt before overwriting: . cp -i [source] [destination] . ",
+    "url": "/0800%20Copying%20Files%20and%20Directories.html#interactive-copying",
+    
+    "relUrl": "/0800%20Copying%20Files%20and%20Directories.html#interactive-copying"
+  },"86": {
+    "doc": "Copying Files and Directories",
+    "title": "Best Practices and Common Mistakes",
+    "content": ". | Verify the paths before executing the cp command to avoid accidental overwriting. | Use the -i flag for interactive copying to avoid accidental data loss. | . ",
+    "url": "/0800%20Copying%20Files%20and%20Directories.html#best-practices-and-common-mistakes",
+    
+    "relUrl": "/0800%20Copying%20Files%20and%20Directories.html#best-practices-and-common-mistakes"
+  },"87": {
+    "doc": "Moving and Renaming Files",
+    "title": "Moving and Renaming Files",
+    "content": " ",
+    "url": "/0900%20Moving%20and%20Renaming%20Files.html",
+    
+    "relUrl": "/0900%20Moving%20and%20Renaming%20Files.html"
+  },"88": {
+    "doc": "Moving and Renaming Files",
+    "title": "Table of contents",
+    "content": ". | Introduction | Objectives | Moving Files and Directories | Renaming Files | Interactive Moving and Renaming | . ",
+    "url": "/0900%20Moving%20and%20Renaming%20Files.html#table-of-contents",
+    
+    "relUrl": "/0900%20Moving%20and%20Renaming%20Files.html#table-of-contents"
+  },"89": {
+    "doc": "Moving and Renaming Files",
+    "title": "Introduction",
+    "content": "The mv command in Linux serves a dual purpose: moving files and directories and renaming them. This chapter explores the usage of mv for these tasks. ",
+    "url": "/0900%20Moving%20and%20Renaming%20Files.html#introduction",
+    
+    "relUrl": "/0900%20Moving%20and%20Renaming%20Files.html#introduction"
+  },"90": {
+    "doc": "Moving and Renaming Files",
+    "title": "Objectives",
+    "content": ". | Learn to move files and directories using the mv command. | Understand how to rename files and directories. | . ",
+    "url": "/0900%20Moving%20and%20Renaming%20Files.html#objectives",
+    
+    "relUrl": "/0900%20Moving%20and%20Renaming%20Files.html#objectives"
+  },"91": {
+    "doc": "Moving and Renaming Files",
+    "title": "Moving Files and Directories",
+    "content": "The basic syntax for moving files or directories is: . mv [source] [destination] . ",
+    "url": "/0900%20Moving%20and%20Renaming%20Files.html#moving-files-and-directories",
+    
+    "relUrl": "/0900%20Moving%20and%20Renaming%20Files.html#moving-files-and-directories"
+  },"92": {
+    "doc": "Moving and Renaming Files",
+    "title": "Renaming Files",
+    "content": "To rename a file, use mv with the new name as the destination: . mv [old_filename] [new_filename] . ",
+    "url": "/0900%20Moving%20and%20Renaming%20Files.html#renaming-files",
+    
+    "relUrl": "/0900%20Moving%20and%20Renaming%20Files.html#renaming-files"
+  },"93": {
+    "doc": "Moving and Renaming Files",
+    "title": "Interactive Moving and Renaming",
+    "content": "Use the -i option to prompt before overwriting: . mv -i [source] [destination] . ",
+    "url": "/0900%20Moving%20and%20Renaming%20Files.html#interactive-moving-and-renaming",
+    
+    "relUrl": "/0900%20Moving%20and%20Renaming%20Files.html#interactive-moving-and-renaming"
+  },"94": {
+    "doc": "Removing Files",
+    "title": "Removing Files",
+    "content": " ",
+    "url": "/1000%20Removing%20Files.html",
+    
+    "relUrl": "/1000%20Removing%20Files.html"
+  },"95": {
+    "doc": "Removing Files",
+    "title": "Table of contents",
+    "content": ". | Introduction | Objectives | Deleting Files | Deleting Directories | Safe Deletion Practices | . ",
+    "url": "/1000%20Removing%20Files.html#table-of-contents",
+    
+    "relUrl": "/1000%20Removing%20Files.html#table-of-contents"
+  },"96": {
+    "doc": "Removing Files",
+    "title": "Introduction",
+    "content": "Removing files and directories is a common task in Linux. This chapter focuses on the rm command, which is used for deleting files and directories. ",
+    "url": "/1000%20Removing%20Files.html#introduction",
+    
+    "relUrl": "/1000%20Removing%20Files.html#introduction"
+  },"97": {
+    "doc": "Removing Files",
+    "title": "Objectives",
+    "content": ". | Understand how to safely remove files using rm. | Learn about removing directories with rm -r. | . ",
+    "url": "/1000%20Removing%20Files.html#objectives",
+    
+    "relUrl": "/1000%20Removing%20Files.html#objectives"
+  },"98": {
+    "doc": "Removing Files",
+    "title": "Deleting Files",
+    "content": "The basic syntax for deleting files is: . rm [filename] . ",
+    "url": "/1000%20Removing%20Files.html#deleting-files",
+    
+    "relUrl": "/1000%20Removing%20Files.html#deleting-files"
+  },"99": {
+    "doc": "Removing Files",
+    "title": "Deleting Directories",
+    "content": "To delete a directory and its contents, use the -r (recursive) option: . rm -r [directory_name] . ",
+    "url": "/1000%20Removing%20Files.html#deleting-directories",
+    
+    "relUrl": "/1000%20Removing%20Files.html#deleting-directories"
+  },"100": {
+    "doc": "Removing Files",
+    "title": "Safe Deletion Practices",
+    "content": "Use the -i option to prompt before each removal: . rm -i [filename] . ",
+    "url": "/1000%20Removing%20Files.html#safe-deletion-practices",
+    
+    "relUrl": "/1000%20Removing%20Files.html#safe-deletion-practices"
+  },"101": {
+    "doc": "Calculating on Calculco",
+    "title": "Calculating on Calculco",
+    "content": " ",
+    "url": "/1050%20Calculating%20on%20Calculco.html",
+    
+    "relUrl": "/1050%20Calculating%20on%20Calculco.html"
+  },"102": {
+    "doc": "Calculating on Calculco",
+    "title": "Table of contents",
+    "content": ". | Introduction | The computing nodes | The OAR task manager | Interactive jobs | Batch jobs | Batch scripts | . ",
+    "url": "/1050%20Calculating%20on%20Calculco.html#table-of-contents",
+    
+    "relUrl": "/1050%20Calculating%20on%20Calculco.html#table-of-contents"
+  },"103": {
+    "doc": "Calculating on Calculco",
+    "title": "Introduction",
+    "content": "As mentioned before no calculations should be done on the front-end. In this lesson we will learn how to access and the various ways to use the computing nodes . ",
+    "url": "/1050%20Calculating%20on%20Calculco.html#introduction",
+    
+    "relUrl": "/1050%20Calculating%20on%20Calculco.html#introduction"
+  },"104": {
+    "doc": "Calculating on Calculco",
+    "title": "The computing nodes",
+    "content": "The computing nodes are the machines that should be used when computations should be done. Each node has the identificative name orval## where ## is a number. Each node has its characteristics and more informations can be found here. ",
+    "url": "/1050%20Calculating%20on%20Calculco.html#the-computing-nodes",
+    
+    "relUrl": "/1050%20Calculating%20on%20Calculco.html#the-computing-nodes"
+  },"105": {
+    "doc": "Calculating on Calculco",
+    "title": "The OAR task manager",
+    "content": "Since the enviroment is shared among multiple users a queue system is used. When asking for a resource (through what is called a job) the user is put in a queue. When the top of the queue is reached the resource is assigned to the user for a given Walltime. The system that handle the queue is OAR. in the following we will uncover its basic usage. The command . oarstat . allows to see the current status of the cluster, for example: . dfontanari@calculco:~$ oarstat Job id S User Duration System message --------- - -------- ---------- ------------------------------------------------ 3991376 R sbertin 170:44:23 R=4,W=400:0:0,J=B,N=Lagr_divergence_2dVar_BOBLIT01,T=besteffort|idempotent (Karma=0.095,quota_ok) 3991377 R sbertin 170:44:05 R=4,W=400:0:0,J=B,N=Lagr_divergence_2dVar_BOBLIT02,T=besteffort|idempotent (Karma=0.095,quota_ok) [...] 4091254 R dfontana 0:00:10 R=2,W=2:0:0,J=I (Karma=0.196,quota_ok) . in this representation the first column (Job id) represents an unique identificative number of the reservation, the second column (S) represents the status of the calculation, R means that the calculation is running, W that the calculation is waiting in the queue, the third column (User) represents the user who requested the calculation, the fourth column (Duration) represent the amount of time passed since the computation started. The last column (System message) encapsulate several informations about the computation for instance the number of parallel process is using (R), the amount of time requested (W), the type of computation (J): B represents a batch computation (no interaction with the user that launched the computation) and I represents a interactive computation (the user is connected on the node as if it is a linux system). Then N represents the name of the computation (optional) and T gives extra informations about the type of job requested, in particular besteffort means that the user allows the job to run with a very low priority (other user can decide to stop the job if they need the resource), but it allows at the same time for the user to be granted a large number of resources or a very long walltime (in general there are constraints on these), idempotent means that id the job is stopped by another user it is put automatically in the queue and will restart as soon as possible. if we need more informations about a job we can use the -f flag along with the specification of the flag -j to indicate the job, for instance . oarstat -fj 4091254 . gives: . Job_Id: 4091254 job_array_id = 4091254 job_array_index = 1 name = project = default owner = dfontanari state = Running wanted_resources = -l \"{type = 'default'}/network_address=1/cpu=1/core=2,walltime=2:0:0\" types = dependencies = assigned_resources = 253+254 assigned_hostnames = orval10 queue = default command = launchingDirectory = /nfs/home/lpca/dfontanari stdout_file = OAR.4091254.stdout stderr_file = OAR.4091254.stderr jobType = INTERACTIVE properties = (((gpu=0) AND desktop_computing = 'NO') AND ( dedicated='NO' OR dedicated='LPCA' OR dedicated='PCS' )) AND drain='NO' reservation = None walltime = 2:0:0 submissionTime = 2023-12-19 15:47:15 startTime = 2023-12-19 15:47:16 cpuset_name = dfontanari_4091254 initial_request = oarsub -I -l /nodes=1/cpu=1/core=2 -p gpu=0 message = R=2,W=2:0:0,J=I (Karma=0.196,quota_ok) scheduledStart = 2023-12-19 15:47:16 resubmit_job_id = 0 events = . we can see for instance that this job runs on orval10, and has been launched from /nfs/home/lpca/dfontanari. ",
+    "url": "/1050%20Calculating%20on%20Calculco.html#the-oar-task-manager",
+    
+    "relUrl": "/1050%20Calculating%20on%20Calculco.html#the-oar-task-manager"
+  },"106": {
+    "doc": "Calculating on Calculco",
+    "title": "Interactive jobs",
+    "content": "The first way to use the computing nodes is to use them interactively. This is done by using the command . oarsub -I . this command will put the user in the queue and when the user reaches the top of the queue it will be connected to the node. The user will be able to use the node as if it was a linux system. The user can then launch its computations on the node. When the user is done with the node it can exit the node by typing exit or by pressing Ctrl+D. The user will then be disconnected from the node and the node will be available for other users. Without specification the command oarsub -I will put the user in the queue for a default amount of time (2 hours) and will request a default amount of resources (1 node, 1 cpu, 1 core). This can be useful for testing purposes or for small computations. However for larger computations it is better to specify the amount of resources and the amount of time needed. This can be done by using the -l flag. For instance . oarsub -I -l /nodes=2/cpu=3/core=4,walltime=4:0:0 . will request 4 hours of computation times and will request 2 nodes, 3 cpus for each node and 4 cores for each cpu (for a total of 24 parallel processes). working on multiple nodes is an advanced topic and should be avoided. the number of processes for each node is given by cpu*core, so in term of number of processes (12), the following commands are equivalent: . oarsub -I -l /nodes=1/cpu=4/core=3,walltime=4:0:0 oarsub -I -l /nodes=1/cpu=3/core=4,walltime=4:0:0 oarsub -I -l /nodes=1/cpu=2/core=6,walltime=4:0:0 oarsub -I -l /nodes=1/cpu=1/core=12,walltime=4:0:0 oarsub -I -l /nodes=1/core=12,walltime=4:0:0 . however using multiple cpus will allow the job to access more memory. Note that in the last case the number of cpu is not specified and the system will automatically choose the number of cpus to use. it is possible to use the flag -p in order to specify the properties of the node that should be used. For instance . oarsub -I -p 'host=\"orval10\"' -l /core=2 . will request the node orval10 and will use 2 core of the node. When the job is started the user will be logged in the node and will be able to use it as if it was a linux system. The user can then launch its computations on the node. When the user is done with the node it can exit the node by typing exit or by pressing Ctrl+D. The user will then be disconnected from the node and the node will be available for other users. ",
+    "url": "/1050%20Calculating%20on%20Calculco.html#interactive-jobs",
+    
+    "relUrl": "/1050%20Calculating%20on%20Calculco.html#interactive-jobs"
+  },"107": {
+    "doc": "Calculating on Calculco",
+    "title": "Batch jobs",
+    "content": "The second way to use the computing nodes is to use them in batch mode. This is done by using the command . oarsub -S ./my_script . this will put the user in the queue and when the user reaches the top of the queue it will execute the script my_script (a script is a file that contains a list of commands that will be executed sequentially). The user will not be connected to the node and when logged out from calculco the job will continue to run. It is possible, as in the interactive case, to specify the amount of resources and the amount of time needed. This can be done by using the -l flag. For instance . oarsub -S ./my_script -l /nodes=1/cpu=2/core=3,walltime=4:0:0 . In the case for a batch job, it might be useful to specify the name of the job, this can be done by using the -n flag. For instance . oarsub -S ./my_program -l /nodes=1/cpu=2/core=3,walltime=4:0:0 -n \"my_job\" . when the command oarstat is issued the job will be identified by the name my_job instead of the job id. In case we want to stop the job we can use the command . oardel &lt;job_id&gt; . where &lt;job_id&gt; is the id of the job that can be found by using the command oarstat. ",
+    "url": "/1050%20Calculating%20on%20Calculco.html#batch-jobs",
+    
+    "relUrl": "/1050%20Calculating%20on%20Calculco.html#batch-jobs"
+  },"108": {
+    "doc": "Calculating on Calculco",
+    "title": "Batch scripts",
+    "content": "In the previous section we have seen how to launch a batch job. However it is not very convenient to have to specify all the parameters of the job in the command line. It is possible to use a script to launch the job. For instance we can edit (using nano for example) a file my_script.oar (however it is not obligatory to use the .oar extension) with the following content: . #!/bin/bash # Normally lines starting with # are comments, # but when they start with #OAR they are interpreted by OAR # also the first line of the script is #!/bin/bash means that the script will be executed by the bash shell #OAR -l /nodes=1/cpu=2/core=3,walltime=4:0:0 #OAR -p 'host=\"orval10\"' #OAR -n \"my_job\" # The script starts here ./my_program . we need to make the script executable by using the command . chmod +x my_script.oar . and then we can launch the job by using the command . oarsub -S ./my_script.oar . which is equivalent to . oarsub -S ./my_program -l /nodes=1/cpu=2/core=3,walltime=4:0:0 -p 'host=\"orval10\"' -n \"my_job\" . Using a script is useful when we want to properly the storage space in calculco. Let suppose that we have an input file called input.dat, a program called my_program that accept the input and output files as argument. We can then create a script called my_script.oar with the following content: . #!/bin/bash #OAR -l /nodes=1/cpu=2/core=3,walltime=4:0:0 #OAR -p 'host=\"orval10\"' #OAR -n \"my_job\" # copy the input file from the nfs storage to the scratch storage cp /nfs/data-unprotected/lpca/dfontanari/input.dat /scratch/lpca/dfontanari/ # run the program and save the output file in the scratch storage /path/to/my_program --input /scratch/lpca/dfontanari/input.dat --output /scratch/lpca/dfontanari/output.dat # copy the output file from the scratch storage to the nfs storage cp /scratch/lpca/dfontanari/output.dat /nfs/data-unprotected/lpca/dfontanari/ # remove the input file from the scratch storage rm /scratch/lpca/dfontanari/input.dat /scratch/lpca/dfontanari/output.dat . If for example we want to to change the number of nodes/cpu/cores or the host we can do it by editing the script without having to change the command line. ",
+    "url": "/1050%20Calculating%20on%20Calculco.html#batch-scripts",
+    
+    "relUrl": "/1050%20Calculating%20on%20Calculco.html#batch-scripts"
+  },"109": {
+    "doc": "Using matlab on calculco",
+    "title": "Using matlab on calculco",
+    "content": " ",
+    "url": "/1070%20Using%20matlab%20on%20calculco.html",
+    
+    "relUrl": "/1070%20Using%20matlab%20on%20calculco.html"
+  },"110": {
+    "doc": "Using matlab on calculco",
+    "title": "Table of contents",
+    "content": ". | Introduction | Launching matlab in interactive mode (command line) | Launching matlab in interactive mode (graphical) | Matlab tokens | Launching matlab in batch mode | Compiling matlab code | . ",
+    "url": "/1070%20Using%20matlab%20on%20calculco.html#table-of-contents",
+    
+    "relUrl": "/1070%20Using%20matlab%20on%20calculco.html#table-of-contents"
+  },"111": {
+    "doc": "Using matlab on calculco",
+    "title": "Introduction",
+    "content": "On calculco it is possible to use matlab. Due to the remote nature of calculco, some care must be taken in order to use it. ",
+    "url": "/1070%20Using%20matlab%20on%20calculco.html#introduction",
+    
+    "relUrl": "/1070%20Using%20matlab%20on%20calculco.html#introduction"
+  },"112": {
+    "doc": "Using matlab on calculco",
+    "title": "Launching matlab in interactive mode (command line)",
+    "content": "To use matlab, we need to connect to a node (since it is forbidden to do calculations on the login node). For now we will start an interactive job: . oarsub -I -l /nodes=1/core=2,walltime=1:00:00 . now, you need to load the matlab module: . ml matlab . this is a short for module load matlab. A module is a piece of software that can be loaded into the environment. to see all available modules, use ml av. To see all loaded modules, use ml list. To unload a module, use ml unload &lt;module&gt;. To unload all modules, use ml purge. for instance we see that the output of ml av contains: . -------------------------------------------------------------------------------------- /nfs/opt/apps/modulefiles/Core -------------------------------------------------------------------------------------- OpenCV/intel-3.4 ampl/2019 conda/4.5 dmtcp/3.0.0 (D) java/jdk-20 (D) matlab/MCR_2023a matlab/R2022a sumo/1.1 OpenCV/3.2 ampl/2020 conda/22.9 (D) elsa/1.0 julia/0.6 matlab/MCR_2023b matlab/R2023a OpenCV/3.3 (D) ampl/2021 (D) dmtcp/2-5.1 java/jdk-17 julia/1.0 (D) matlab/R2021b matlab/R2023b (D) . we see that there are multiple versions of matlab available. The presence of a symbol (D) indicates that the module matlab/R2023b is loaded by default if ml matlab is invoked. To load a specific version, use for example ml matlab/R2021b. Now we can start matlab: . matlab -nodisplay -nodesktop -nosplash . the parameters -nodisplay -nodesktop -nosplash are necessary because we do not want to launch matlab in graphical mode. you will be welcomed by the matlab prompt: . dfontanari@orval04:~/asdf$ matlab -nodisplay -nodesktop -nosplash &lt; M A T L A B (R) &gt; Copyright 1984-2023 The MathWorks, Inc. R2023b Update 2 (23.2.0.2391609) 64-bit (glnxa64) September 22, 2023 To get started, type doc. For product information, visit www.mathworks.com. &gt;&gt; . At this point you can interact with the system as usual: . &gt;&gt; x=1; &gt;&gt; y=2; &gt;&gt; z=x+y; &gt;&gt; fprintf(\"the value of z is %d\\n\",z) the value of z is 3 &gt;&gt; feature('numcores') MATLAB detected: 28 physical cores. MATLAB detected: 28 logical cores. MATLAB was assigned: 2 logical cores by the OS. MATLAB is using: 2 logical cores. MATLAB is not using all logical cores because Operating System restricted the number of cores to: 2. ans = 2 &gt;&gt; . Observe that here Matlab detect that there are 28 physical cores (the number of cores of the node), but that only 2 are available (the number of cores requested in the oarsub command). When you are done, you can exit matlab: . &gt;&gt; exit . ",
+    "url": "/1070%20Using%20matlab%20on%20calculco.html#launching-matlab-in-interactive-mode-command-line",
+    
+    "relUrl": "/1070%20Using%20matlab%20on%20calculco.html#launching-matlab-in-interactive-mode-command-line"
+  },"113": {
+    "doc": "Using matlab on calculco",
+    "title": "Launching matlab in interactive mode (graphical)",
+    "content": "The command line interface of matlab is not very user friendly. It is possible to launch matlab in graphical mode. To do so, we need to allow X forwarding. In Linux and MacOS this is obtained by adding the parameter -X to the ssh command: . ssh -X calculco . in Windows, if Mobaxterm is used, X forwarding is enabled by default. Once connected to calculco, the procedure is the same as before, but matlab is launched without the parameters -nodisplay -nodesktop -nosplash: . oarsub -I -l /nodes=1/core=2,walltime=1:00:00 ml matlab matlab . This will open the familiar matlab interface. ",
+    "url": "/1070%20Using%20matlab%20on%20calculco.html#launching-matlab-in-interactive-mode-graphical",
+    
+    "relUrl": "/1070%20Using%20matlab%20on%20calculco.html#launching-matlab-in-interactive-mode-graphical"
+  },"114": {
+    "doc": "Using matlab on calculco",
+    "title": "Matlab tokens",
+    "content": "Matlab is a commercial software. In order to use it, you need to have a valid license. On calculco, the license is managed by tokens. This means that if all tokens are used, you cannot use matlab. It is also possible to use matlab on your own computer using calculco tokens, but this is beyond the scope of this tutorial. ",
+    "url": "/1070%20Using%20matlab%20on%20calculco.html#matlab-tokens",
+    
+    "relUrl": "/1070%20Using%20matlab%20on%20calculco.html#matlab-tokens"
+  },"115": {
+    "doc": "Using matlab on calculco",
+    "title": "Launching matlab in batch mode",
+    "content": "Using matlab in interactive mode is useful for prototyping. Once you want to run a real simulation, you probably want to use matlab in batch mode. In order to do so you need to create a matlab script (using for example nano). For instance, create a file “test_calculco.m” containing: . x=1; y=2; z=x+y; fprintf(\"the value of z is %d\\n\",z) . then you can run the script using: . matlab -nodisplay -nodesktop -nosplash -batch \"test_calculco\" . you shold obtain the following output: . dfontanari@orval04:~$ matlab -nodisplay -nodesktop -nosplash -batch \"test_calculco\" the value of z is 3 dfontanari@orval04:~$ . Now it is time to run everything as a batch job. To do so we create a file called test_calculco.oar, in the same directory as test_calculco.m, containing: . #!/bin/bash #OAR -l /nodes=1/core=2,walltime=1:00:00 #OAR -o test_calculco.log #OAR -n test_calculco source /nfs/opt/env/env.sh ml matlab matlab -nodisplay -nodesktop -nosplash -batch \"test_calculco\" &gt; test_calculco.out . Here the only new thing is the line source /nfs/opt/env/env.sh. This line is necessary in order to use the command ml inside a batch script. Also the &gt; operator is used to redirect the output of matlab to a file called test_calculco.out. We set this file as executable using: . chmod +x test_calculco.oar . then we submit the job using: . oarsub -S ./test_calculco.oar . we should now have a file test_calculco.out containing: . the value of z is 3 . ",
+    "url": "/1070%20Using%20matlab%20on%20calculco.html#launching-matlab-in-batch-mode",
+    
+    "relUrl": "/1070%20Using%20matlab%20on%20calculco.html#launching-matlab-in-batch-mode"
+  },"116": {
+    "doc": "Using matlab on calculco",
+    "title": "Compiling matlab code",
+    "content": "As mentioned before matlab works on a tokes system. In particular its different “toolboxes” (specialised libraries) all uses tokens. In this way if too many user are using some matlab toolboxes at the same time, the system will not be able to provide enough tokens for everyone. A way to avoid this problem is to compile your matlab code. This way you will not need any token to run your code. The drawback is that you will not be able to modify your code anymore. (and the compilation process itself requires tokens). Back to our example we can compile the code using (provided that the command ml matlab has been executed): . mcc -mv test_calculco.m . a new file test_calculco is created. This is an executable file that can be run without any token, from a computation node: . oarsub -I -l /nodes=1/core=2,walltime=1:00:00 ml matlab/MCR_2023b ./test_calculco . where the line ml matlab/MCR_2023b is necessary to load the matlab runtime environment (and its version should match the version used to compile the code). obviously it is possible to create a batch script to run the compiled code: . #!/bin/bash #OAR -l /nodes=1/core=2,walltime=1:00:00 #OAR -o test_calculco.log #OAR -n test_calculco source /nfs/opt/env/env.sh ml MCR_2023b ./test_calculco &gt; test_calculco.out . ",
+    "url": "/1070%20Using%20matlab%20on%20calculco.html#compiling-matlab-code",
+    
+    "relUrl": "/1070%20Using%20matlab%20on%20calculco.html#compiling-matlab-code"
+  },"117": {
+    "doc": "Advanced File Operations and Globbing",
+    "title": "Advanced File Operations and Globbing",
+    "content": " ",
+    "url": "/1100%20Advanced%20File%20Operations%20and%20Globbing.html",
+    
+    "relUrl": "/1100%20Advanced%20File%20Operations%20and%20Globbing.html"
+  },"118": {
+    "doc": "Advanced File Operations and Globbing",
+    "title": "Table of contents",
+    "content": ". | Introduction | Objectives | Understanding Globbing and Wildcards | Basic Globbing Usage | Mass File Creation | Renaming and Moving with Patterns | Best Practices for Using Globbing | . ",
+    "url": "/1100%20Advanced%20File%20Operations%20and%20Globbing.html#table-of-contents",
+    
+    "relUrl": "/1100%20Advanced%20File%20Operations%20and%20Globbing.html#table-of-contents"
+  },"119": {
+    "doc": "Advanced File Operations and Globbing",
+    "title": "Introduction",
+    "content": "Globbing in Linux allows you to use wildcard patterns to specify sets of filenames. This chapter explores advanced file operation techniques and the use of globbing patterns in commands like cp, mv, rm, and touch. ",
+    "url": "/1100%20Advanced%20File%20Operations%20and%20Globbing.html#introduction",
+    
+    "relUrl": "/1100%20Advanced%20File%20Operations%20and%20Globbing.html#introduction"
+  },"120": {
+    "doc": "Advanced File Operations and Globbing",
+    "title": "Objectives",
+    "content": ". | Understand the use of wildcards and globbing patterns for file operations. | Learn to apply advanced techniques in copying, moving, and removing files. | Explore shorthand methods for creating and manipulating files. | . ",
+    "url": "/1100%20Advanced%20File%20Operations%20and%20Globbing.html#objectives",
+    
+    "relUrl": "/1100%20Advanced%20File%20Operations%20and%20Globbing.html#objectives"
+  },"121": {
+    "doc": "Advanced File Operations and Globbing",
+    "title": "Understanding Globbing and Wildcards",
+    "content": "Globbing allows you to create patterns using wildcards like * (any string of characters), ? (any single character), and [] (any character within the brackets). ",
+    "url": "/1100%20Advanced%20File%20Operations%20and%20Globbing.html#understanding-globbing-and-wildcards",
+    
+    "relUrl": "/1100%20Advanced%20File%20Operations%20and%20Globbing.html#understanding-globbing-and-wildcards"
+  },"122": {
+    "doc": "Advanced File Operations and Globbing",
+    "title": "Basic Globbing Usage",
+    "content": "Examples of using globbing patterns in commands: . | cp *.txt /destination . – Copies all .txt files from the current directory to /destination. | rm project_?.pdf . – Removes .pdf files with names like project_1.pdf, project_a.pdf, etc. | mv project_[a-e].pdf /destination . – Moves .pdf files like project_a.pdf to project_e.pdf to /destination. | . ",
+    "url": "/1100%20Advanced%20File%20Operations%20and%20Globbing.html#basic-globbing-usage",
+    
+    "relUrl": "/1100%20Advanced%20File%20Operations%20and%20Globbing.html#basic-globbing-usage"
+  },"123": {
+    "doc": "Advanced File Operations and Globbing",
+    "title": "Mass File Creation",
+    "content": "Using curly braces {} for creating or removig multiple files: . | touch file-{a..q}.txt . – Creates 17 text files, from file-a.txt to file-q.txt . | rm file-{1..10}.txt . – Deletes 10 text files, from file-1.txt to file-10.txt . | . ",
+    "url": "/1100%20Advanced%20File%20Operations%20and%20Globbing.html#mass-file-creation",
+    
+    "relUrl": "/1100%20Advanced%20File%20Operations%20and%20Globbing.html#mass-file-creation"
+  },"124": {
+    "doc": "Advanced File Operations and Globbing",
+    "title": "Renaming and Moving with Patterns",
+    "content": "Using curly braces for renaming or moving: . | cp filename.{ext,bak} . – Copies filename.ext to a new file named filename.bak . | mv filename_{old,new}_name.txt . – Rename filename_old.txt to filename_new.txt . | . ",
+    "url": "/1100%20Advanced%20File%20Operations%20and%20Globbing.html#renaming-and-moving-with-patterns",
+    
+    "relUrl": "/1100%20Advanced%20File%20Operations%20and%20Globbing.html#renaming-and-moving-with-patterns"
+  },"125": {
+    "doc": "Advanced File Operations and Globbing",
+    "title": "Best Practices for Using Globbing",
+    "content": ". | Test globbing patterns with a safe command like echo before applying them. | Be cautious with patterns that might match more files than intended, especially with rm. | . ",
+    "url": "/1100%20Advanced%20File%20Operations%20and%20Globbing.html#best-practices-for-using-globbing",
+    
+    "relUrl": "/1100%20Advanced%20File%20Operations%20and%20Globbing.html#best-practices-for-using-globbing"
+  },"126": {
+    "doc": "Useful BASH tricks",
+    "title": "Useful BASH tricks",
+    "content": " ",
+    "url": "/1200%20Useful%20BASH%20tricks.html",
+    
+    "relUrl": "/1200%20Useful%20BASH%20tricks.html"
+  },"127": {
+    "doc": "Useful BASH tricks",
+    "title": "Table of contents",
+    "content": ". | Introduction | head and tail | cat | less | grep | find | sed | awk | redirection | pipes | . ",
+    "url": "/1200%20Useful%20BASH%20tricks.html#table-of-contents",
+    
+    "relUrl": "/1200%20Useful%20BASH%20tricks.html#table-of-contents"
+  },"128": {
+    "doc": "Useful BASH tricks",
+    "title": "Introduction",
+    "content": "In this section we introduce some useful BASH tricks. These are not strictly necessary to use the cluster, but they can make your life easier. ",
+    "url": "/1200%20Useful%20BASH%20tricks.html#introduction",
+    
+    "relUrl": "/1200%20Useful%20BASH%20tricks.html#introduction"
+  },"129": {
+    "doc": "Useful BASH tricks",
+    "title": "head and tail",
+    "content": "The commands head and tail are used to print the first and last lines of a file, respectively. For instance, to print the first 10 lines of a file, use: . head -n 10 file.txt . To print the last 10 lines of a file, use: . tail -n 10 file.txt . ",
+    "url": "/1200%20Useful%20BASH%20tricks.html#head-and-tail",
+    
+    "relUrl": "/1200%20Useful%20BASH%20tricks.html#head-and-tail"
+  },"130": {
+    "doc": "Useful BASH tricks",
+    "title": "cat",
+    "content": "The command cat is used to print the content of a file. For instance, to print the content of a file, use: . cat file.txt . if is possible to print the line numbers using the -n option: . cat -n file.txt . ",
+    "url": "/1200%20Useful%20BASH%20tricks.html#cat",
+    
+    "relUrl": "/1200%20Useful%20BASH%20tricks.html#cat"
+  },"131": {
+    "doc": "Useful BASH tricks",
+    "title": "less",
+    "content": "The command less is used to print the content of a file, but it allows you to scroll through the file. For instance, to print the content of a file, use: . less file.txt . To scroll down, use the arrow keys. To scroll up, use the arrow keys. To quit, press q. ",
+    "url": "/1200%20Useful%20BASH%20tricks.html#less",
+    
+    "relUrl": "/1200%20Useful%20BASH%20tricks.html#less"
+  },"132": {
+    "doc": "Useful BASH tricks",
+    "title": "grep",
+    "content": "The command grep is used to search for a pattern in a file. For instance, to search for the pattern pattern in the file file.txt, use: . grep pattern file.txt . The grep command as a lot of options, for instance: . | -i to ignore case | -v to invert the match (print only lines that do not match) | . for example, to search for the pattern pattern in the file file.txt, ignoring case, use: . grep -i pattern file.txt . ",
+    "url": "/1200%20Useful%20BASH%20tricks.html#grep",
+    
+    "relUrl": "/1200%20Useful%20BASH%20tricks.html#grep"
+  },"133": {
+    "doc": "Useful BASH tricks",
+    "title": "find",
+    "content": "The command find is used to search for files in a directory. For instance, to search for all files in the current directory, use: . find . To search for all files matching the pattern *.txt in the current directory, use: . find . -name \"*.txt\" . ",
+    "url": "/1200%20Useful%20BASH%20tricks.html#find",
+    
+    "relUrl": "/1200%20Useful%20BASH%20tricks.html#find"
+  },"134": {
+    "doc": "Useful BASH tricks",
+    "title": "sed",
+    "content": "The command sed is used to replace patterns in a file. For instance, to replace all occurrences of pattern1 with pattern2 in the file file.txt, use: . sed -i 's/pattern1/pattern2/g' file.txt . ",
+    "url": "/1200%20Useful%20BASH%20tricks.html#sed",
+    
+    "relUrl": "/1200%20Useful%20BASH%20tricks.html#sed"
+  },"135": {
+    "doc": "Useful BASH tricks",
+    "title": "awk",
+    "content": "The command awk is used to manipulate text files. For instance, to print the first column of a file, use: . awk '{print $1}' file.txt . ",
+    "url": "/1200%20Useful%20BASH%20tricks.html#awk",
+    
+    "relUrl": "/1200%20Useful%20BASH%20tricks.html#awk"
+  },"136": {
+    "doc": "Useful BASH tricks",
+    "title": "redirection",
+    "content": "The output of a command can be redirected to a file using the &gt; operator. For instance, to redirect the output of the command ls to a file called file.txt, use: . ls &gt; file.txt . ",
+    "url": "/1200%20Useful%20BASH%20tricks.html#redirection",
+    
+    "relUrl": "/1200%20Useful%20BASH%20tricks.html#redirection"
+  },"137": {
+    "doc": "Useful BASH tricks",
+    "title": "pipes",
+    "content": "The output of a command can be used as input for another command using the | operator. For instance, to print the first column of the output of the command ls, use: . ls | awk '{print $1}' . ",
+    "url": "/1200%20Useful%20BASH%20tricks.html#pipes",
+    
+    "relUrl": "/1200%20Useful%20BASH%20tricks.html#pipes"
+  },"138": {
+    "doc": "Advanced File Operations and Globbing",
+    "title": "Advanced File Operations and Globbing",
+    "content": " ",
+    "url": "/Interacting%20with%20the%20File%20System/Advanced%20File%20Operations%20and%20Globbing.html",
+    
+    "relUrl": "/Interacting%20with%20the%20File%20System/Advanced%20File%20Operations%20and%20Globbing.html"
+  },"139": {
+    "doc": "Advanced File Operations and Globbing",
+    "title": "Table of contents",
+    "content": ". | Introduction | Objectives | Understanding Globbing and Wildcards | Basic Globbing Usage | Mass File Creation | Renaming and Moving with Patterns | Best Practices for Using Globbing | . ",
+    "url": "/Interacting%20with%20the%20File%20System/Advanced%20File%20Operations%20and%20Globbing.html#table-of-contents",
+    
+    "relUrl": "/Interacting%20with%20the%20File%20System/Advanced%20File%20Operations%20and%20Globbing.html#table-of-contents"
+  },"140": {
+    "doc": "Advanced File Operations and Globbing",
+    "title": "Introduction",
+    "content": "Globbing in Linux allows you to use wildcard patterns to specify sets of filenames. This chapter explores advanced file operation techniques and the use of globbing patterns in commands like cp, mv, rm, and touch. ",
+    "url": "/Interacting%20with%20the%20File%20System/Advanced%20File%20Operations%20and%20Globbing.html#introduction",
+    
+    "relUrl": "/Interacting%20with%20the%20File%20System/Advanced%20File%20Operations%20and%20Globbing.html#introduction"
+  },"141": {
+    "doc": "Advanced File Operations and Globbing",
+    "title": "Objectives",
+    "content": ". | Understand the use of wildcards and globbing patterns for file operations. | Learn to apply advanced techniques in copying, moving, and removing files. | Explore shorthand methods for creating and manipulating files. | . ",
+    "url": "/Interacting%20with%20the%20File%20System/Advanced%20File%20Operations%20and%20Globbing.html#objectives",
+    
+    "relUrl": "/Interacting%20with%20the%20File%20System/Advanced%20File%20Operations%20and%20Globbing.html#objectives"
+  },"142": {
+    "doc": "Advanced File Operations and Globbing",
+    "title": "Understanding Globbing and Wildcards",
+    "content": "Globbing allows you to create patterns using wildcards like * (any string of characters), ? (any single character), and [] (any character within the brackets). ",
+    "url": "/Interacting%20with%20the%20File%20System/Advanced%20File%20Operations%20and%20Globbing.html#understanding-globbing-and-wildcards",
+    
+    "relUrl": "/Interacting%20with%20the%20File%20System/Advanced%20File%20Operations%20and%20Globbing.html#understanding-globbing-and-wildcards"
+  },"143": {
+    "doc": "Advanced File Operations and Globbing",
+    "title": "Basic Globbing Usage",
+    "content": "Examples of using globbing patterns in commands: . | cp *.txt /destination . – Copies all .txt files from the current directory to /destination. | rm project_?.pdf . – Removes .pdf files with names like project_1.pdf, project_a.pdf, etc. | mv project_[a-e].pdf /destination . – Moves .pdf files like project_a.pdf to project_e.pdf to /destination. | . ",
+    "url": "/Interacting%20with%20the%20File%20System/Advanced%20File%20Operations%20and%20Globbing.html#basic-globbing-usage",
+    
+    "relUrl": "/Interacting%20with%20the%20File%20System/Advanced%20File%20Operations%20and%20Globbing.html#basic-globbing-usage"
+  },"144": {
+    "doc": "Advanced File Operations and Globbing",
+    "title": "Mass File Creation",
+    "content": "Using curly braces {} for creating or removig multiple files: . | touch file-{a..q}.txt . – Creates 17 text files, from file-a.txt to file-q.txt . | rm file-{1..10}.txt . – Deletes 10 text files, from file-1.txt to file-10.txt . | . ",
+    "url": "/Interacting%20with%20the%20File%20System/Advanced%20File%20Operations%20and%20Globbing.html#mass-file-creation",
+    
+    "relUrl": "/Interacting%20with%20the%20File%20System/Advanced%20File%20Operations%20and%20Globbing.html#mass-file-creation"
+  },"145": {
+    "doc": "Advanced File Operations and Globbing",
+    "title": "Renaming and Moving with Patterns",
+    "content": "Using curly braces for renaming or moving: . | cp filename.{ext,bak} . – Copies filename.ext to a new file named filename.bak . | mv filename_{old,new}_name.txt . – Rename filename_old.txt to filename_new.txt . | . ",
+    "url": "/Interacting%20with%20the%20File%20System/Advanced%20File%20Operations%20and%20Globbing.html#renaming-and-moving-with-patterns",
+    
+    "relUrl": "/Interacting%20with%20the%20File%20System/Advanced%20File%20Operations%20and%20Globbing.html#renaming-and-moving-with-patterns"
+  },"146": {
+    "doc": "Advanced File Operations and Globbing",
+    "title": "Best Practices for Using Globbing",
+    "content": ". | Test globbing patterns with a safe command like echo before applying them. | Be cautious with patterns that might match more files than intended, especially with rm. | . ",
+    "url": "/Interacting%20with%20the%20File%20System/Advanced%20File%20Operations%20and%20Globbing.html#best-practices-for-using-globbing",
+    
+    "relUrl": "/Interacting%20with%20the%20File%20System/Advanced%20File%20Operations%20and%20Globbing.html#best-practices-for-using-globbing"
+  },"147": {
+    "doc": "Copying Files and Directories",
+    "title": "Copying Files and Directories",
+    "content": " ",
+    "url": "/Interacting%20with%20the%20File%20System/Copying%20Files%20and%20Directories.html",
+    
+    "relUrl": "/Interacting%20with%20the%20File%20System/Copying%20Files%20and%20Directories.html"
+  },"148": {
+    "doc": "Copying Files and Directories",
+    "title": "Table of contents",
+    "content": ". | Introduction | Objectives | Basic File Copying | Copying Directories | Interactive Copying | Best Practices and Common Mistakes | . ",
+    "url": "/Interacting%20with%20the%20File%20System/Copying%20Files%20and%20Directories.html#table-of-contents",
+    
+    "relUrl": "/Interacting%20with%20the%20File%20System/Copying%20Files%20and%20Directories.html#table-of-contents"
+  },"149": {
+    "doc": "Copying Files and Directories",
+    "title": "Introduction",
+    "content": "Understanding how to copy files and directories in Linux is crucial for effective file management. This chapter covers the cp command, which is used for copying files and directories. ",
+    "url": "/Interacting%20with%20the%20File%20System/Copying%20Files%20and%20Directories.html#introduction",
+    
+    "relUrl": "/Interacting%20with%20the%20File%20System/Copying%20Files%20and%20Directories.html#introduction"
+  },"150": {
+    "doc": "Copying Files and Directories",
+    "title": "Objectives",
+    "content": ". | Learn to copy files using the cp command. | Understand how to copy directories, including using the recursive option. | Explore options for preserving file attributes during copying. | . ",
+    "url": "/Interacting%20with%20the%20File%20System/Copying%20Files%20and%20Directories.html#objectives",
+    
+    "relUrl": "/Interacting%20with%20the%20File%20System/Copying%20Files%20and%20Directories.html#objectives"
+  },"151": {
+    "doc": "Copying Files and Directories",
+    "title": "Basic File Copying",
+    "content": "The basic syntax for copying files is: . cp [source] [destination] . ",
+    "url": "/Interacting%20with%20the%20File%20System/Copying%20Files%20and%20Directories.html#basic-file-copying",
+    
+    "relUrl": "/Interacting%20with%20the%20File%20System/Copying%20Files%20and%20Directories.html#basic-file-copying"
+  },"152": {
+    "doc": "Copying Files and Directories",
+    "title": "Copying Directories",
+    "content": "To copy directories, use the -r (recursive) option: . cp -r [source_directory] [destination_directory] . ",
+    "url": "/Interacting%20with%20the%20File%20System/Copying%20Files%20and%20Directories.html#copying-directories",
+    
+    "relUrl": "/Interacting%20with%20the%20File%20System/Copying%20Files%20and%20Directories.html#copying-directories"
+  },"153": {
+    "doc": "Copying Files and Directories",
+    "title": "Interactive Copying",
+    "content": "Use the -i option to prompt before overwriting: . cp -i [source] [destination] . ",
+    "url": "/Interacting%20with%20the%20File%20System/Copying%20Files%20and%20Directories.html#interactive-copying",
+    
+    "relUrl": "/Interacting%20with%20the%20File%20System/Copying%20Files%20and%20Directories.html#interactive-copying"
+  },"154": {
+    "doc": "Copying Files and Directories",
+    "title": "Best Practices and Common Mistakes",
+    "content": ". | Verify the paths before executing the cp command to avoid accidental overwriting. | Use the -i flag for interactive copying to avoid accidental data loss. | . ",
+    "url": "/Interacting%20with%20the%20File%20System/Copying%20Files%20and%20Directories.html#best-practices-and-common-mistakes",
+    
+    "relUrl": "/Interacting%20with%20the%20File%20System/Copying%20Files%20and%20Directories.html#best-practices-and-common-mistakes"
+  },"155": {
+    "doc": "Creating and Removing Directories",
+    "title": "Creating and Removing Directories",
+    "content": " ",
+    "url": "/Interacting%20with%20the%20File%20System/Creating%20and%20Removing%20Directories.html",
+    
+    "relUrl": "/Interacting%20with%20the%20File%20System/Creating%20and%20Removing%20Directories.html"
+  },"156": {
+    "doc": "Creating and Removing Directories",
+    "title": "Table of contents",
+    "content": ". | Introduction | Objectives | Creating Directories with mkdir | Basic Usage of mkdir | Creating Multiple Directories | Creating Nested Directories | Removing Directories with rmdir | Basic Usage of rmdir | Removing Nested Empty Directories | Best Practices and Common Mistakes | . ",
+    "url": "/Interacting%20with%20the%20File%20System/Creating%20and%20Removing%20Directories.html#table-of-contents",
+    
+    "relUrl": "/Interacting%20with%20the%20File%20System/Creating%20and%20Removing%20Directories.html#table-of-contents"
+  },"157": {
+    "doc": "Creating and Removing Directories",
+    "title": "Introduction",
+    "content": "Understanding how to effectively create and manage directories is a fundamental aspect of file system navigation in Linux. This chapter focuses on the mkdir and rmdir commands, which are used for creating new directories and removing existing ones, respectively. ",
+    "url": "/Interacting%20with%20the%20File%20System/Creating%20and%20Removing%20Directories.html#introduction",
+    
+    "relUrl": "/Interacting%20with%20the%20File%20System/Creating%20and%20Removing%20Directories.html#introduction"
+  },"158": {
+    "doc": "Creating and Removing Directories",
+    "title": "Objectives",
+    "content": ". | Learn to create directories using the mkdir command. | Understand how to remove directories with the rmdir command. | Explore options and best practices for directory management. | . ",
+    "url": "/Interacting%20with%20the%20File%20System/Creating%20and%20Removing%20Directories.html#objectives",
+    
+    "relUrl": "/Interacting%20with%20the%20File%20System/Creating%20and%20Removing%20Directories.html#objectives"
+  },"159": {
+    "doc": "Creating and Removing Directories",
+    "title": "Creating Directories with mkdir",
+    "content": "mkdir, short for “make directory,” is a command used to create new directories in the Linux file system. ",
+    "url": "/Interacting%20with%20the%20File%20System/Creating%20and%20Removing%20Directories.html#creating-directories-with-mkdir",
+    
+    "relUrl": "/Interacting%20with%20the%20File%20System/Creating%20and%20Removing%20Directories.html#creating-directories-with-mkdir"
+  },"160": {
+    "doc": "Creating and Removing Directories",
+    "title": "Basic Usage of mkdir",
+    "content": "The basic syntax for mkdir is: . mkdir [directory_name] . ",
+    "url": "/Interacting%20with%20the%20File%20System/Creating%20and%20Removing%20Directories.html#basic-usage-of-mkdir",
+    
+    "relUrl": "/Interacting%20with%20the%20File%20System/Creating%20and%20Removing%20Directories.html#basic-usage-of-mkdir"
+  },"161": {
+    "doc": "Creating and Removing Directories",
+    "title": "Creating Multiple Directories",
+    "content": "You can also create multiple directories at once: . mkdir [dir1] [dir2] [dir3] . ",
+    "url": "/Interacting%20with%20the%20File%20System/Creating%20and%20Removing%20Directories.html#creating-multiple-directories",
+    
+    "relUrl": "/Interacting%20with%20the%20File%20System/Creating%20and%20Removing%20Directories.html#creating-multiple-directories"
+  },"162": {
+    "doc": "Creating and Removing Directories",
+    "title": "Creating Nested Directories",
+    "content": "To create nested directories, use the -p option: . mkdir -p [parent_directory]/[child_directory] . ",
+    "url": "/Interacting%20with%20the%20File%20System/Creating%20and%20Removing%20Directories.html#creating-nested-directories",
+    
+    "relUrl": "/Interacting%20with%20the%20File%20System/Creating%20and%20Removing%20Directories.html#creating-nested-directories"
+  },"163": {
+    "doc": "Creating and Removing Directories",
+    "title": "Removing Directories with rmdir",
+    "content": "rmdir, which stands for “remove directory,” is used to delete empty directories. ",
+    "url": "/Interacting%20with%20the%20File%20System/Creating%20and%20Removing%20Directories.html#removing-directories-with-rmdir",
+    
+    "relUrl": "/Interacting%20with%20the%20File%20System/Creating%20and%20Removing%20Directories.html#removing-directories-with-rmdir"
+  },"164": {
+    "doc": "Creating and Removing Directories",
+    "title": "Basic Usage of rmdir",
+    "content": "The basic syntax for rmdir is: . rmdir [directory_name] . ",
+    "url": "/Interacting%20with%20the%20File%20System/Creating%20and%20Removing%20Directories.html#basic-usage-of-rmdir",
+    
+    "relUrl": "/Interacting%20with%20the%20File%20System/Creating%20and%20Removing%20Directories.html#basic-usage-of-rmdir"
+  },"165": {
+    "doc": "Creating and Removing Directories",
+    "title": "Removing Nested Empty Directories",
+    "content": "To remove nested empty directories, use rmdir with the -p option: . rmdir -p [parent_directory]/[child_directory] . ‘rmdir’ can only remove empty directories. If a directory contains files the rm command should be used . ",
+    "url": "/Interacting%20with%20the%20File%20System/Creating%20and%20Removing%20Directories.html#removing-nested-empty-directories",
+    
+    "relUrl": "/Interacting%20with%20the%20File%20System/Creating%20and%20Removing%20Directories.html#removing-nested-empty-directories"
+  },"166": {
+    "doc": "Creating and Removing Directories",
+    "title": "Best Practices and Common Mistakes",
+    "content": ". | Always check the current directory with pwd before creating or removing directories to avoid errors. | Be cautious with directory names and paths to prevent accidental deletion of important data. | Remember that rmdir only removes empty directories. Use rm -r with caution for non-empty directories. | . ",
+    "url": "/Interacting%20with%20the%20File%20System/Creating%20and%20Removing%20Directories.html#best-practices-and-common-mistakes",
+    
+    "relUrl": "/Interacting%20with%20the%20File%20System/Creating%20and%20Removing%20Directories.html#best-practices-and-common-mistakes"
+  },"167": {
+    "doc": "Creating files and Basic Text Editing",
+    "title": "Creating files and Basic Text Editing",
+    "content": " ",
+    "url": "/Interacting%20with%20the%20File%20System/Creating%20files%20and%20Basic%20Text%20Editing.html",
+    
+    "relUrl": "/Interacting%20with%20the%20File%20System/Creating%20files%20and%20Basic%20Text%20Editing.html"
+  },"168": {
+    "doc": "Creating files and Basic Text Editing",
+    "title": "Table of contents",
+    "content": ". | Introduction | Objectives | Creating Empty Files with touch | Updating Timestamps with touch | Changing Timestamps to a Specific Time | Creating Multiple Files | Basic Text Editing with nano | Opening a File in nano | Basic Navigation | Editing and Saving | Cutting or Copying and Pasting Text | Searching for Text | Best Practices and Common Mistakes | . ",
+    "url": "/Interacting%20with%20the%20File%20System/Creating%20files%20and%20Basic%20Text%20Editing.html#table-of-contents",
+    
+    "relUrl": "/Interacting%20with%20the%20File%20System/Creating%20files%20and%20Basic%20Text%20Editing.html#table-of-contents"
+  },"169": {
+    "doc": "Creating files and Basic Text Editing",
+    "title": "Introduction",
+    "content": "The touch command in Linux is versatile and commonly used for creating new empty files and updating file timestamps. Alongside touch, learning the basics of the nano text editor is essential for file content manipulation. This chapter explores how to use touch effectively and introduces basic text editing with nano. ",
+    "url": "/Interacting%20with%20the%20File%20System/Creating%20files%20and%20Basic%20Text%20Editing.html#introduction",
+    
+    "relUrl": "/Interacting%20with%20the%20File%20System/Creating%20files%20and%20Basic%20Text%20Editing.html#introduction"
+  },"170": {
+    "doc": "Creating files and Basic Text Editing",
+    "title": "Objectives",
+    "content": ". | Learn to create new empty files using touch. | Understand how to update the access and modification timestamps of files. | Discover the different uses of touch in file management and scripting. | Get acquainted with nano for basic text editing tasks. | . ",
+    "url": "/Interacting%20with%20the%20File%20System/Creating%20files%20and%20Basic%20Text%20Editing.html#objectives",
+    
+    "relUrl": "/Interacting%20with%20the%20File%20System/Creating%20files%20and%20Basic%20Text%20Editing.html#objectives"
+  },"171": {
+    "doc": "Creating files and Basic Text Editing",
+    "title": "Creating Empty Files with touch",
+    "content": "The primary use of touch is to create a new empty file: . touch [filename] . If the file already exists, touch won’t alter its content but will update its timestamp. ",
+    "url": "/Interacting%20with%20the%20File%20System/Creating%20files%20and%20Basic%20Text%20Editing.html#creating-empty-files-with-touch",
+    
+    "relUrl": "/Interacting%20with%20the%20File%20System/Creating%20files%20and%20Basic%20Text%20Editing.html#creating-empty-files-with-touch"
+  },"172": {
+    "doc": "Creating files and Basic Text Editing",
+    "title": "Updating Timestamps with touch",
+    "content": "touch can be used to update the access (atime) and modification (mtime) times of a file: . touch [filename] . This command updates both the access and modification times to the current time. ",
+    "url": "/Interacting%20with%20the%20File%20System/Creating%20files%20and%20Basic%20Text%20Editing.html#updating-timestamps-with-touch",
+    
+    "relUrl": "/Interacting%20with%20the%20File%20System/Creating%20files%20and%20Basic%20Text%20Editing.html#updating-timestamps-with-touch"
+  },"173": {
+    "doc": "Creating files and Basic Text Editing",
+    "title": "Changing Timestamps to a Specific Time",
+    "content": "You can explicitly set the timestamps of a file: . touch -t YYYYMMDDHHMM [filename] . ",
+    "url": "/Interacting%20with%20the%20File%20System/Creating%20files%20and%20Basic%20Text%20Editing.html#changing-timestamps-to-a-specific-time",
+    
+    "relUrl": "/Interacting%20with%20the%20File%20System/Creating%20files%20and%20Basic%20Text%20Editing.html#changing-timestamps-to-a-specific-time"
+  },"174": {
+    "doc": "Creating files and Basic Text Editing",
+    "title": "Creating Multiple Files",
+    "content": "touch can also be used to create multiple files at once: . touch [file1] [file2] [file3] . ",
+    "url": "/Interacting%20with%20the%20File%20System/Creating%20files%20and%20Basic%20Text%20Editing.html#creating-multiple-files",
+    
+    "relUrl": "/Interacting%20with%20the%20File%20System/Creating%20files%20and%20Basic%20Text%20Editing.html#creating-multiple-files"
+  },"175": {
+    "doc": "Creating files and Basic Text Editing",
+    "title": "Basic Text Editing with nano",
+    "content": "nano is a simple, easy-to-use text editor in Linux, ideal for beginners and quick file edits. ",
+    "url": "/Interacting%20with%20the%20File%20System/Creating%20files%20and%20Basic%20Text%20Editing.html#basic-text-editing-with-nano",
+    
+    "relUrl": "/Interacting%20with%20the%20File%20System/Creating%20files%20and%20Basic%20Text%20Editing.html#basic-text-editing-with-nano"
+  },"176": {
+    "doc": "Creating files and Basic Text Editing",
+    "title": "Opening a File in nano",
+    "content": "To open a file (or create a new one if it doesn’t exist) with nano, use: . nano [filename] . ",
+    "url": "/Interacting%20with%20the%20File%20System/Creating%20files%20and%20Basic%20Text%20Editing.html#opening-a-file-in-nano",
+    
+    "relUrl": "/Interacting%20with%20the%20File%20System/Creating%20files%20and%20Basic%20Text%20Editing.html#opening-a-file-in-nano"
+  },"177": {
+    "doc": "Creating files and Basic Text Editing",
+    "title": "Basic Navigation",
+    "content": ". | Use arrow keys to move the cursor. | Page Up and Page Down scroll through the file. | . ",
+    "url": "/Interacting%20with%20the%20File%20System/Creating%20files%20and%20Basic%20Text%20Editing.html#basic-navigation",
+    
+    "relUrl": "/Interacting%20with%20the%20File%20System/Creating%20files%20and%20Basic%20Text%20Editing.html#basic-navigation"
+  },"178": {
+    "doc": "Creating files and Basic Text Editing",
+    "title": "Editing and Saving",
+    "content": ". | Type directly to insert text. | To save changes, press Ctrl + O, then Enter. | To exit nano, press Ctrl + X. | . ",
+    "url": "/Interacting%20with%20the%20File%20System/Creating%20files%20and%20Basic%20Text%20Editing.html#editing-and-saving",
+    
+    "relUrl": "/Interacting%20with%20the%20File%20System/Creating%20files%20and%20Basic%20Text%20Editing.html#editing-and-saving"
+  },"179": {
+    "doc": "Creating files and Basic Text Editing",
+    "title": "Cutting or Copying and Pasting Text",
+    "content": ". | To cut a line, press Ctrl + K. | To copy a line, press Alt + 6. | To select a part of the text for cutting or copying, hold down the Alt key and use the arrow keys to highlight the desired text, then cut with Ctrl + K or copy with Alt + 6. | To paste the cut text, move the cursor to the desired location and press Ctrl + U. | . ",
+    "url": "/Interacting%20with%20the%20File%20System/Creating%20files%20and%20Basic%20Text%20Editing.html#cutting-or-copying-and-pasting-text",
+    
+    "relUrl": "/Interacting%20with%20the%20File%20System/Creating%20files%20and%20Basic%20Text%20Editing.html#cutting-or-copying-and-pasting-text"
+  },"180": {
+    "doc": "Creating files and Basic Text Editing",
+    "title": "Searching for Text",
+    "content": ". | To search for text, press Ctrl + W and enter the search term. | . ",
+    "url": "/Interacting%20with%20the%20File%20System/Creating%20files%20and%20Basic%20Text%20Editing.html#searching-for-text",
+    
+    "relUrl": "/Interacting%20with%20the%20File%20System/Creating%20files%20and%20Basic%20Text%20Editing.html#searching-for-text"
+  },"181": {
+    "doc": "Creating files and Basic Text Editing",
+    "title": "Best Practices and Common Mistakes",
+    "content": ". | Use touch for quickly creating test files or for initializing files in scripts. | Remember that touch cannot create directories; it’s only for files. | Avoid unintentionally overwriting timestamps of important files. | In nano, regularly save your work to prevent data loss. | Be cautious when cutting and pasting text to avoid unintentional deletions. | . ",
+    "url": "/Interacting%20with%20the%20File%20System/Creating%20files%20and%20Basic%20Text%20Editing.html#best-practices-and-common-mistakes",
+    
+    "relUrl": "/Interacting%20with%20the%20File%20System/Creating%20files%20and%20Basic%20Text%20Editing.html#best-practices-and-common-mistakes"
+  },"182": {
+    "doc": "Moving and Renaming Files",
+    "title": "Moving and Renaming Files",
+    "content": " ",
+    "url": "/module-3/chapter-4",
+    
+    "relUrl": "/module-3/chapter-4"
+  },"183": {
+    "doc": "Moving and Renaming Files",
+    "title": "Table of contents",
+    "content": ". | Introduction | Objectives | Moving Files and Directories | Renaming Files | Interactive Moving and Renaming | . ",
+    "url": "/module-3/chapter-4#table-of-contents",
+    
+    "relUrl": "/module-3/chapter-4#table-of-contents"
+  },"184": {
+    "doc": "Moving and Renaming Files",
+    "title": "Introduction",
+    "content": "The mv command in Linux serves a dual purpose: moving files and directories and renaming them. This chapter explores the usage of mv for these tasks. ",
+    "url": "/module-3/chapter-4#introduction",
+    
+    "relUrl": "/module-3/chapter-4#introduction"
+  },"185": {
+    "doc": "Moving and Renaming Files",
+    "title": "Objectives",
+    "content": ". | Learn to move files and directories using the mv command. | Understand how to rename files and directories. | . ",
+    "url": "/module-3/chapter-4#objectives",
+    
+    "relUrl": "/module-3/chapter-4#objectives"
+  },"186": {
+    "doc": "Moving and Renaming Files",
+    "title": "Moving Files and Directories",
+    "content": "The basic syntax for moving files or directories is: . mv [source] [destination] . ",
+    "url": "/module-3/chapter-4#moving-files-and-directories",
+    
+    "relUrl": "/module-3/chapter-4#moving-files-and-directories"
+  },"187": {
+    "doc": "Moving and Renaming Files",
+    "title": "Renaming Files",
+    "content": "To rename a file, use mv with the new name as the destination: . mv [old_filename] [new_filename] . ",
+    "url": "/module-3/chapter-4#renaming-files",
+    
+    "relUrl": "/module-3/chapter-4#renaming-files"
+  },"188": {
+    "doc": "Moving and Renaming Files",
+    "title": "Interactive Moving and Renaming",
+    "content": "Use the -i option to prompt before overwriting: . mv -i [source] [destination] . ",
+    "url": "/module-3/chapter-4#interactive-moving-and-renaming",
+    
+    "relUrl": "/module-3/chapter-4#interactive-moving-and-renaming"
+  },"189": {
+    "doc": "Removing Files",
+    "title": "Removing Files",
+    "content": " ",
+    "url": "/module-3/chapter-5",
+    
+    "relUrl": "/module-3/chapter-5"
+  },"190": {
+    "doc": "Removing Files",
+    "title": "Table of contents",
+    "content": ". | Introduction | Objectives | Deleting Files | Deleting Directories | Safe Deletion Practices | . ",
+    "url": "/module-3/chapter-5#table-of-contents",
+    
+    "relUrl": "/module-3/chapter-5#table-of-contents"
+  },"191": {
+    "doc": "Removing Files",
+    "title": "Introduction",
+    "content": "Removing files and directories is a common task in Linux. This chapter focuses on the rm command, which is used for deleting files and directories. ",
+    "url": "/module-3/chapter-5#introduction",
+    
+    "relUrl": "/module-3/chapter-5#introduction"
+  },"192": {
+    "doc": "Removing Files",
+    "title": "Objectives",
+    "content": ". | Understand how to safely remove files using rm. | Learn about removing directories with rm -r. | . ",
+    "url": "/module-3/chapter-5#objectives",
+    
+    "relUrl": "/module-3/chapter-5#objectives"
+  },"193": {
+    "doc": "Removing Files",
+    "title": "Deleting Files",
+    "content": "The basic syntax for deleting files is: . rm [filename] . ",
+    "url": "/module-3/chapter-5#deleting-files",
+    
+    "relUrl": "/module-3/chapter-5#deleting-files"
+  },"194": {
+    "doc": "Removing Files",
+    "title": "Deleting Directories",
+    "content": "To delete a directory and its contents, use the -r (recursive) option: . rm -r [directory_name] . ",
+    "url": "/module-3/chapter-5#deleting-directories",
+    
+    "relUrl": "/module-3/chapter-5#deleting-directories"
+  },"195": {
+    "doc": "Removing Files",
+    "title": "Safe Deletion Practices",
+    "content": "Use the -i option to prompt before each removal: . rm -i [filename] . ",
+    "url": "/module-3/chapter-5#safe-deletion-practices",
+    
+    "relUrl": "/module-3/chapter-5#safe-deletion-practices"
+  },"196": {
+    "doc": "The `cd` Command",
+    "title": "The cd Command",
+    "content": " ",
+    "url": "/Navigating%20the%20File%20System/The%20cd%20Command.html#the-cd-command",
+    
+    "relUrl": "/Navigating%20the%20File%20System/The%20cd%20Command.html#the-cd-command"
+  },"197": {
+    "doc": "The `cd` Command",
+    "title": "Table of contents",
+    "content": ". | Introduction to cd | Using Absolute Paths | Returning to the Home Directory | Using Relative Paths | Using the Tilde (~) | Navigating to Other Users’ Directories | Returning to the Previous Directory | Getting Help with cd | . ",
+    "url": "/Navigating%20the%20File%20System/The%20cd%20Command.html#table-of-contents",
+    
+    "relUrl": "/Navigating%20the%20File%20System/The%20cd%20Command.html#table-of-contents"
+  },"198": {
+    "doc": "The `cd` Command",
+    "title": "Introduction to cd",
+    "content": "The cd command, standing for “change directory,” is essential for navigating the Linux file system. It allows you to move between directories. ",
+    "url": "/Navigating%20the%20File%20System/The%20cd%20Command.html#introduction-to-cd",
+    
+    "relUrl": "/Navigating%20the%20File%20System/The%20cd%20Command.html#introduction-to-cd"
+  },"199": {
+    "doc": "The `cd` Command",
+    "title": "Using Absolute Paths",
+    "content": "To change to a specific directory, provide the directory path: . cd /path/to/folder . This command moves you to the directory /path/to/folder. Note that this is an absolute path, starting from the root directory. ",
+    "url": "/Navigating%20the%20File%20System/The%20cd%20Command.html#using-absolute-paths",
+    
+    "relUrl": "/Navigating%20the%20File%20System/The%20cd%20Command.html#using-absolute-paths"
+  },"200": {
+    "doc": "The `cd` Command",
+    "title": "Returning to the Home Directory",
+    "content": "To return to your home directory, simply use cd without any arguments: . cd . ",
+    "url": "/Navigating%20the%20File%20System/The%20cd%20Command.html#returning-to-the-home-directory",
+    
+    "relUrl": "/Navigating%20the%20File%20System/The%20cd%20Command.html#returning-to-the-home-directory"
+  },"201": {
+    "doc": "The `cd` Command",
+    "title": "Using Relative Paths",
+    "content": "You can also navigate using relative paths. For example, if you are currently in /path/to, the command: . cd folder . changes your current directory to /path/to/folder. If you then execute: . cd ../directory . your current directory becomes /path/to/directory. To navigate up multiple levels, use multiple ../. For instance: . cd ../../in/the/forest . takes you to /path/in/the/forest. ",
+    "url": "/Navigating%20the%20File%20System/The%20cd%20Command.html#using-relative-paths",
+    
+    "relUrl": "/Navigating%20the%20File%20System/The%20cd%20Command.html#using-relative-paths"
+  },"202": {
+    "doc": "The `cd` Command",
+    "title": "Using the Tilde (~)",
+    "content": "The tilde symbol (~) is a shortcut for your home directory. For example: . cd ~/Desktop . changes to the Desktop directory within your home directory. ",
+    "url": "/Navigating%20the%20File%20System/The%20cd%20Command.html#using-the-tilde-",
+    
+    "relUrl": "/Navigating%20the%20File%20System/The%20cd%20Command.html#using-the-tilde-"
+  },"203": {
+    "doc": "The `cd` Command",
+    "title": "Navigating to Other Users’ Directories",
+    "content": "Be mindful of permissions when attempting to access other users’ directories. For example: . cd ~/../anotheruser . attempts to move to the home directory of anotheruser. If you try to execute the command . cd ~/../../lmpa/someuser . where someuser is an user belonging to the lmpa laboratory (you can see the list by issuing the command ls) an error message will be shown: . -bash: cd: /nfs/home/lpca/dfontanari/../../lmpa/someuser/: Permission non accordée . Linux file permissions determine what you can and cannot access. In a shared environment like Calculco, you generally have full access to your home directory, limited access to directories of users in your group, and no access to others’ directories. ",
+    "url": "/Navigating%20the%20File%20System/The%20cd%20Command.html#navigating-to-other-users-directories",
+    
+    "relUrl": "/Navigating%20the%20File%20System/The%20cd%20Command.html#navigating-to-other-users-directories"
+  },"204": {
+    "doc": "The `cd` Command",
+    "title": "Returning to the Previous Directory",
+    "content": "Use cd - to return to the last directory you were in: . cd - . ",
+    "url": "/Navigating%20the%20File%20System/The%20cd%20Command.html#returning-to-the-previous-directory",
+    
+    "relUrl": "/Navigating%20the%20File%20System/The%20cd%20Command.html#returning-to-the-previous-directory"
+  },"205": {
+    "doc": "The `cd` Command",
+    "title": "Getting Help with cd",
+    "content": "cd is a shell builtin, so its documentation is found under shell builtins: . | For a brief overview, try: cd --help . | For detailed documentation, refer to: man builtins . info builtins . | . These commands provide varying levels of detail, from a quick summary to more comprehensive information. ",
+    "url": "/Navigating%20the%20File%20System/The%20cd%20Command.html#getting-help-with-cd",
+    
+    "relUrl": "/Navigating%20the%20File%20System/The%20cd%20Command.html#getting-help-with-cd"
+  },"206": {
+    "doc": "The `cd` Command",
+    "title": "The `cd` Command",
+    "content": " ",
+    "url": "/Navigating%20the%20File%20System/The%20cd%20Command.html",
+    
+    "relUrl": "/Navigating%20the%20File%20System/The%20cd%20Command.html"
+  },"207": {
+    "doc": "The front-end and data transfer",
+    "title": "Overview",
+    "content": "The computing platform of ULCO, named CalcUlco, aims to pool computing resources within the institution. It is managed by the pôle Calcul Scientifique of the Service Commun du Système d’Information of ULCO. This platform is open to all faculty, technical staff, and students of the university who are involved in a scientific research project requiring intensive computing. Once connected to the front-end node you will be facing a Linux system, however the shared nature of the enviroment some care should be taken in its usage . ",
+    "url": "/module-4/chapter-1#overview",
+    
+    "relUrl": "/module-4/chapter-1#overview"
+  },"208": {
+    "doc": "The front-end and data transfer",
+    "title": "Accessing Calculco",
+    "content": " ",
+    "url": "/module-4/chapter-1#accessing-calculco",
+    
+    "relUrl": "/module-4/chapter-1#accessing-calculco"
+  },"209": {
+    "doc": "The front-end and data transfer",
+    "title": "Table of contents",
+    "content": ". | Overview . | Introduction | calculco | pcsdata | . | . ",
+    "url": "/module-4/chapter-1#table-of-contents",
+    
+    "relUrl": "/module-4/chapter-1#table-of-contents"
+  },"210": {
+    "doc": "The front-end and data transfer",
+    "title": "Introduction",
+    "content": "Our platform features several machines, two of which are externally accessible: calculco and pcsdata. Each serves a unique purpose. ",
+    "url": "/module-4/chapter-1#introduction",
+    
+    "relUrl": "/module-4/chapter-1#introduction"
+  },"211": {
+    "doc": "The front-end and data transfer",
+    "title": "calculco",
+    "content": "calculco is the gateway to our computing system, designed specifically for launching computations. Connect to this machine using SSH with credentials provided by the University Service: . ssh username@calculco.univ-littoral.fr . Upon login, you’ll see a welcome message: . Linux calculco 5.10.0-21-amd64 #1 SMP Debian 5.10.162-1 (2023-01-21) x86_64 Last login: Wed Dec 13 14:38:13 2023 from 192.168.144.177 ___ _____ _ ___ _ _ _ ___ _____ ( _`\\ ( _ )( ) ( _`\\ ( ) ( )( ) ( _`\\ ( _ ) | ( (_)| (_) || | ( (_)| || | ( (_)| ( ) | | _ | _ || _ | _ | || _ | _ | | | (_( )| ||_( )| (_( )| (_) ||_( )| (_( )| (_) | (____/'(_) (_)(____/'(____/'(_____)(____/'(____/'(_____) Last Login....: mer. déc. 13 15:02:47 from 192.168.144.241 Uptime........: 40 days 0 hours 37 minutes 5 seconds Load..........: 1.18 (1minute) 1.11 (5minutes) 1.06 (15minutes) Memory MB.....: 32064 Used: 2885 Free: 299 Free Swap: 321 Swap In Use: 61034 Disk Usage....: You're using 56488MB (max 102400MB) in /nfs/home/lpca/dfontanari SSH Logins....: There are currently min, users logged in Processes.....: 688 total running of which 9 are yours Weather.......: Calais 9°C, Cloudy dfontanari@calculco:~$ . This is your starting point to interact with the system using commands we will explore in this course. You can also use this machine to launch computations, and we’ll explore that in a later lesson. Remember, calculco is a front-end with limited computational capabilities. Refrain from performing computations here. We’ll explore job submission to the cluster in a later lesson. For large file transfers, use pcsdata. ",
+    "url": "/module-4/chapter-1#calculco",
+    
+    "relUrl": "/module-4/chapter-1#calculco"
+  },"212": {
+    "doc": "The front-end and data transfer",
+    "title": "pcsdata",
+    "content": "For data transfers, use pcsdata: . ssh username@pcsdata.univ-littoral.fr . Upon login, you’ll be greeted with: . Linux pcsdata 5.10.0-21-amd64 #1 SMP Debian 5.10.162-1 (2023-01-21) x86_64 ____ ____ ____ ____ _ _____ _ | _ \\ / ___/ ___|| _ \\ / \\|_ _|/ \\ |_) | \\___ \\| |/ _ \\ | / _ \\ | __/|___ ___) |_| / ___ \\|/ ___ \\ |_| \\____|____/|____/_/ \\_\\_/_/ \\_ Last Login....: mer. déc. 13 15:09:21 from 192.168.144.241 Uptime........: 5 days 22 hours 20 minutes 56 seconds Load..........: 0.90 (1minute) 0.81 (5minutes) 0.74 (15minutes) Memory MB.....: 63905 Used: 1694 Free: 504 Free Cached: 74 Swap In Use: 19071 SSH Logins....: There are currently 1 users logged in Processes.....: 664 total running of which 7 are yours Weather.......: Calais 9°C, Cloudy Home Usage....: You're using 56488MB (max 102400MB) in /nfs/home/lpca/dfontanari Data Usage U..: Your group (lpca) is using 29% of 23T in /nfs/data/unprotected/lpca Data Usage P..: Your group (lpca) is using 2% of 2,0T in /nfs/data/protected/lpca dfontanari@pcsdata:~$ . pcsdata shares storage space with Calculco and is optimized for data transfer to and from your local machine, ensuring the front-end isn’t overloaded. ",
+    "url": "/module-4/chapter-1#pcsdata",
+    
+    "relUrl": "/module-4/chapter-1#pcsdata"
+  },"213": {
+    "doc": "The front-end and data transfer",
+    "title": "The front-end and data transfer",
+    "content": " ",
+    "url": "/module-4/chapter-1",
+    
+    "relUrl": "/module-4/chapter-1"
+  },"214": {
+    "doc": "The `ls` Command",
+    "title": "The ls Command",
+    "content": " ",
+    "url": "/Navigating%20the%20File%20System/The%20ls%20Command.html#the-ls-command",
+    
+    "relUrl": "/Navigating%20the%20File%20System/The%20ls%20Command.html#the-ls-command"
+  },"215": {
+    "doc": "The `ls` Command",
+    "title": "Table of contents",
+    "content": ". | Introduction to ls | How ls Works | Common ls Parameters | Getting Help with ls | . ",
+    "url": "/Navigating%20the%20File%20System/The%20ls%20Command.html#table-of-contents",
+    
+    "relUrl": "/Navigating%20the%20File%20System/The%20ls%20Command.html#table-of-contents"
+  },"216": {
+    "doc": "The `ls` Command",
+    "title": "Introduction to ls",
+    "content": "The ls command in Linux is a fundamental tool for file system navigation and management. It lists the contents of directories, helping users understand what files and subdirectories exist in their current location. ",
+    "url": "/Navigating%20the%20File%20System/The%20ls%20Command.html#introduction-to-ls",
+    
+    "relUrl": "/Navigating%20the%20File%20System/The%20ls%20Command.html#introduction-to-ls"
+  },"217": {
+    "doc": "The `ls` Command",
+    "title": "How ls Works",
+    "content": "By default, ls displays the contents of the current directory: . ls . Example output: . dfontanari@calculco:~/hematite$ ls inner.chk inner.gjf outer_far.chk outer_far.gjf outer_near.chk outer_near.gjf dfontanari@calculco:~/hematite$ . To list the contents of a specific directory, provide the directory path after the ls command: . ls /path/to/directory . Example: . dfontanari@calculco:~$ pwd /nfs/home/lpca/dfontanari dfontanari@calculco:~$ ls /nfs/home/lpca/dfontanari/hematite inner.chk inner.gjf outer_far.chk outer_far.gjf outer_near.chk outer_near.gjf dfontanari@calculco:~$ . In Linux, use the forward slash (/) as the directory separator, unlike DOS or Windows systems that use the backslash (\\). Relative paths start from the current directory without a leading forward slash. Use .. to reference the parent directory. For example, ls .. lists the contents of the parent directory. The tilde symbol (~) represents your home directory, so ls ~/Documents lists the contents of your Documents folder. ",
+    "url": "/Navigating%20the%20File%20System/The%20ls%20Command.html#how-ls-works",
+    
+    "relUrl": "/Navigating%20the%20File%20System/The%20ls%20Command.html#how-ls-works"
+  },"218": {
+    "doc": "The `ls` Command",
+    "title": "Common ls Parameters",
+    "content": "ls supports various parameters to alter its output: . | -a, --all: Include hidden files (starting with .) in the listing. ls -a . | -l: Use a long listing format, showing detailed file information. ls -l . | -h, --human-readable: Make file sizes human-readable (K, M, G). Use with -l. ls -lh . | -t: Sort files by modification time, newest first. ls -t . | -r: Reverse the order of the listing. ls -r . | -R, --recursive: List files in all subdirectories. ls -R . | . For a visual representation of the directory structure, consider using tree: . tree . The tree command shows the file system hierarchy in a tree format. Use --help, man and info for more options, like limiting the depth of the tree to three levels (-L 3) and showing only directories (-d): . tree -d -L 3 . Parameters can often be combined. For example, ls -lh and ls -l -h are equivalent. Parameters like -w or --width have multiple syntax forms, such as . ls -a -w 50 . ls -a -w50 . or . ls -a --width=50 . ",
+    "url": "/Navigating%20the%20File%20System/The%20ls%20Command.html#common-ls-parameters",
+    
+    "relUrl": "/Navigating%20the%20File%20System/The%20ls%20Command.html#common-ls-parameters"
+  },"219": {
+    "doc": "The `ls` Command",
+    "title": "Getting Help with ls",
+    "content": "For more information on the ls command: . | Brief overview: ls --help . | Detailed documentation: man ls . info ls . | . Each command provides different levels of detail, from a quick summary to comprehensive documentation. ",
+    "url": "/Navigating%20the%20File%20System/The%20ls%20Command.html#getting-help-with-ls",
+    
+    "relUrl": "/Navigating%20the%20File%20System/The%20ls%20Command.html#getting-help-with-ls"
+  },"220": {
+    "doc": "The `ls` Command",
+    "title": "The `ls` Command",
+    "content": " ",
+    "url": "/Navigating%20the%20File%20System/The%20ls%20Command.html",
+    
+    "relUrl": "/Navigating%20the%20File%20System/The%20ls%20Command.html"
+  },"221": {
+    "doc": "The `pwd` Command",
+    "title": "The pwd Command",
+    "content": " ",
+    "url": "/Navigating%20the%20File%20System/The%20pwd%20Command.html#the-pwd-command",
+    
+    "relUrl": "/Navigating%20the%20File%20System/The%20pwd%20Command.html#the-pwd-command"
+  },"222": {
+    "doc": "The `pwd` Command",
+    "title": "Table of contents",
+    "content": ". | Introduction to pwd | How pwd Works | Using pwd in Conjunction with Other Commands | Getting Help with pwd | . ",
+    "url": "/Navigating%20the%20File%20System/The%20pwd%20Command.html#table-of-contents",
+    
+    "relUrl": "/Navigating%20the%20File%20System/The%20pwd%20Command.html#table-of-contents"
+  },"223": {
+    "doc": "The `pwd` Command",
+    "title": "Introduction to pwd",
+    "content": "The pwd command, which stands for “print working directory” is a fundamental tool in the Linux shell. It displays the full path of your current directory, helping you understand your location in the file system hierarchy. This command is particularly useful when you’re navigating through directories or when you want to confirm your current directory before performing file operations. ",
+    "url": "/Navigating%20the%20File%20System/The%20pwd%20Command.html#introduction-to-pwd",
+    
+    "relUrl": "/Navigating%20the%20File%20System/The%20pwd%20Command.html#introduction-to-pwd"
+  },"224": {
+    "doc": "The `pwd` Command",
+    "title": "How pwd Works",
+    "content": "When you enter pwd in the terminal, it outputs the absolute path of the directory you’re currently in. Here’s an example of its usage and output: . dfontanari@calculco:~/Documents$ pwd /nfs/home/lpca/dfontana/Documents . In this example, /nfs/home/lpca/dfontana/Documents is the absolute path to the current working directory. Absolute vs. Relative Paths . | An absolute path starts from the root directory (/) and provides the complete path to a file or directory. | A relative path starts from the current directory and is relative to where you currently are in the file system. | . ",
+    "url": "/Navigating%20the%20File%20System/The%20pwd%20Command.html#how-pwd-works",
+    
+    "relUrl": "/Navigating%20the%20File%20System/The%20pwd%20Command.html#how-pwd-works"
+  },"225": {
+    "doc": "The `pwd` Command",
+    "title": "Using pwd in Conjunction with Other Commands",
+    "content": "Understanding your current directory is crucial when using commands like cd (change directory) or ls (list directory contents). For instance, before copying a file with cp, you might use pwd to confirm you’re in the correct directory. ",
+    "url": "/Navigating%20the%20File%20System/The%20pwd%20Command.html#using-pwd-in-conjunction-with-other-commands",
+    
+    "relUrl": "/Navigating%20the%20File%20System/The%20pwd%20Command.html#using-pwd-in-conjunction-with-other-commands"
+  },"226": {
+    "doc": "The `pwd` Command",
+    "title": "Getting Help with pwd",
+    "content": "If you need more information about the pwd command, you can use the following: . | For a brief overview: pwd --help . | For detailed documentation: man pwd . info pwd . | . Each of these commands provides different levels of detail, from a quick summary to comprehensive documentation. ",
+    "url": "/Navigating%20the%20File%20System/The%20pwd%20Command.html#getting-help-with-pwd",
+    
+    "relUrl": "/Navigating%20the%20File%20System/The%20pwd%20Command.html#getting-help-with-pwd"
+  },"227": {
+    "doc": "The `pwd` Command",
+    "title": "The `pwd` Command",
+    "content": " ",
+    "url": "/Navigating%20the%20File%20System/The%20pwd%20Command.html",
+    
+    "relUrl": "/Navigating%20the%20File%20System/The%20pwd%20Command.html"
+  },"228": {
+    "doc": "About",
+    "title": "A Linux crash course",
+    "content": " ",
+    "url": "/about/#a-linux-crash-course",
+    
+    "relUrl": "/about/#a-linux-crash-course"
+  },"229": {
+    "doc": "About",
+    "title": "Table of contents",
+    "content": ". | A Linux crash course . | What will we learn in this course? | What won’t we learn in this course? | Who is this course for? | . | . ",
+    "url": "/about/#table-of-contents",
+    
+    "relUrl": "/about/#table-of-contents"
+  },"230": {
+    "doc": "About",
+    "title": "What will we learn in this course?",
+    "content": ". ",
+    "url": "/about/#what-will-we-learn-in-this-course",
+    
+    "relUrl": "/about/#what-will-we-learn-in-this-course"
+  },"231": {
+    "doc": "About",
+    "title": "What won’t we learn in this course?",
+    "content": ". ",
+    "url": "/about/#what-wont-we-learn-in-this-course",
+    
+    "relUrl": "/about/#what-wont-we-learn-in-this-course"
+  },"232": {
+    "doc": "About",
+    "title": "Who is this course for?",
+    "content": " ",
+    "url": "/about/#who-is-this-course-for",
+    
+    "relUrl": "/about/#who-is-this-course-for"
+  },"233": {
+    "doc": "About",
+    "title": "About",
+    "content": " ",
+    "url": "/about/",
+    
+    "relUrl": "/about/"
+  }
+}
