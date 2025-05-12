@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inspirational Food Impact Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f9ff; /* Light blue background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 1rem;
+        }
+        .calculator-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            width: 100%;
+            max-width: 600px;
+        }
+        .input-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #374151; /* Gray-700 */
+        }
+        .input-field, .select-field {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #d1d5db; /* Gray-300 */
+            border-radius: 0.5rem;
+            box-sizing: border-box;
+            margin-bottom: 0.25rem;
+            transition: border-color 0.3s;
+        }
+        .input-field:focus, .select-field:focus {
+            outline: none;
+            border-color: #2563eb; /* Blue-600 */
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3); /* Focus ring */
+        }
+        .unit-note {
+            font-size: 0.875rem;
+            color: #6b7280; /* Gray-500 */
+            margin-bottom: 1rem;
+        }
+        .calculate-button {
+            width: 100%;
+            padding: 0.875rem;
+            background-color: #2563eb; /* Blue-600 */
+            color: white;
+            font-weight: 600;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 0.5rem;
+        }
+        .calculate-button:hover {
+            background-color: #1d4ed8; /* Blue-700 */
+        }
+        .result-area {
+            margin-top: 1.5rem;
+            padding: 1.25rem;
+            background-color: #e0f2fe; /* Light blue for result - Tailwind sky-100 */
+            border-radius: 0.5rem;
+            text-align: center;
+            color: #0c4a6e; /* Darker blue text - Tailwind sky-800 */
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .result-area:hover {
+            background-color: #bae6fd; /* Slightly darker blue on hover - Tailwind sky-200 */
+        }
+        .result-text {
+            font-size: 1.05rem;
+            font-weight: 500;
+            min-height: 3.5em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1.6;
+        }
+        .result-text span {
+             display: inline-block;
+        }
+        .result-text strong {
+            font-weight: 700;
+            font-size: 1.2em;
+            margin: 0 0.25em;
+            color: #0369a1; /* Tailwind sky-700 for emphasis color */
+        }
+        .result-hint {
+            font-size: 0.75rem;
+            color: #0369a1; /* Tailwind sky-700 */
+            margin-top: 0.5rem;
+        }
+        .error-message {
+            color: #dc2626; /* Red-600 */
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+        }
+        .frequency-group {
+            display: flex;
+            gap: 0.5rem;
+            align-items: flex-start;
+        }
+        .frequency-group .input-field {
+            flex-grow: 1;
+        }
+        .frequency-group .select-field {
+            flex-basis: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator-card">
+        <h1 class="text-2xl font-bold text-center mb-6 text-slate-700">Your Positive Food Impact</h1>
+        <p class="text-sm text-slate-600 mb-6 text-center">
+            Discover how much potential weight gain you can avoid by making mindful choices! Click the result for more empowering stats.
+        </p>
+
+        <form id="fatCalculatorForm">
+            <div>
+                <label for="packageQuantity" class="input-label">1. Total Quantity in Package</label>
+                <input type="number" id="packageQuantity" class="input-field" placeholder="e.g., 500 or 2" step="any" min="0.01" required>
+                <p class="unit-note">Total amount in the package (e.g., 500 for 500g, 2 for 2 bars).</p>
+            </div>
+
+            <div>
+                <label for="energyPerServing" class="input-label">2. Energy per Serving (kcal)</label>
+                <input type="number" id="energyPerServing" class="input-field" placeholder="e.g., 150" step="any" min="0" required>
+                <p class="unit-note">Kilocalories (kcal) per serving/reference amount.</p>
+            </div>
+
+            <div>
+                <label for="servingSize" class="input-label">3. Serving Size / Reference Amount</label>
+                <input type="number" id="servingSize" class="input-field" placeholder="e.g., 100 or 1" step="any" min="0.01" required>
+                <p class="unit-note">Size of one serving, same unit as package quantity.</p>
+            </div>
+
+            <div>
+                <label for="numberOfPeople" class="input-label">4. Number of People Sharing Package</label>
+                <input type="number" id="numberOfPeople" class="input-field" placeholder="e.g., 1" step="1" min="1" value="1" required>
+                <p class="unit-note">How many people share one full package? (Enter 1 if solo).</p>
+            </div>
+
+            <div>
+                <label class="input-label">5. Consumption Frequency (Per Person)</label>
+                <div class="frequency-group">
+                    <input type="number" id="consumptionQuantity" class="input-field" placeholder="Times" step="any" min="0">
+                    <select id="consumptionPeriod" class="select-field">
+                        <option value="day">per Day</option>
+                        <option value="week">per Week</option>
+                        <option value="month">per Month</option>
+                    </select>
+                </div>
+                <p class="unit-note">How often one person consumes their share (optional for time-based stats).</p>
+            </div>
+
+            <button type="submit" class="calculate-button">Calculate My Positive Impact</button>
+        </form>
+
+        <div id="resultArea" class="result-area hidden">
+            <p id="resultText" class="result-text"></p>
+            <p id="resultHint" class="result-hint">(Click for more ways your choice makes a difference!)</p>
+        </div>
+        <div id="errorArea" class="mt-4"></div>
+
+    </div>
+
+    <script>
+        // DOM Elements
+        const form = document.getElementById('fatCalculatorForm');
+        const resultArea = document.getElementById('resultArea');
+        const resultText = document.getElementById('resultText');
+        const resultHint = document.getElementById('resultHint');
+        const errorArea = document.getElementById('errorArea');
+
+        // --- State variables ---
+        let currentStatisticIndex = 0; // 0: g/pkg/person, 1: pkgs/kg/person, 2: time/kg/person, 3: g/year/person
+        const KCAL_PER_GRAM_FAT = 7.7;
+        const DAYS_IN_YEAR = 365.25;
+        const DAYS_IN_MONTH_AVG = DAYS_IN_YEAR / 12;
+
+        let calculatedFatGainGramsPerPersonPerPackage = 0;
+        let consumptionsPerDayGlobal = 0;
+
+        // --- Helper function to format days into a readable string ---
+        function formatDays(totalDays) {
+            if (totalDays === Infinity || isNaN(totalDays) || totalDays <=0) return "a very significant delay"; // Positive framing
+            if (totalDays < 1) return "almost immediately"; // For context of avoidance
+            if (totalDays < 7) return `${totalDays.toFixed(0)} day(s)`;
+            if (totalDays < (DAYS_IN_MONTH_AVG - 2)) return `${(totalDays / 7).toFixed(1)} week(s)`;
+            if (totalDays < DAYS_IN_YEAR) return `${(totalDays / DAYS_IN_MONTH_AVG).toFixed(1)} month(s)`;
+
+            const years = Math.floor(totalDays / DAYS_IN_YEAR);
+            const remainingDaysAfterYears = totalDays % DAYS_IN_YEAR;
+            const months = Math.floor(remainingDaysAfterYears / DAYS_IN_MONTH_AVG);
+            
+            let str = "";
+            if (years > 0) str += `${years} year(s) `;
+            if (months > 0) str += `${months} month(s) `;
+            
+            const remainingDaysFinal = Math.round(remainingDaysAfterYears % DAYS_IN_MONTH_AVG);
+            if (years === 0 && months === 0 && remainingDaysFinal > 0) {
+                 return `${remainingDaysFinal} day(s)`;
+            } else if (str === "" && totalDays > 0) {
+                return `${totalDays.toFixed(0)} day(s)`;
+            }
+            return `approx. ${str.trim()}`;
+        }
+
+        // --- Function to update the displayed statistic ---
+        function updateDisplayedStatistic() {
+            resultHint.textContent = "(Click for more ways your choice makes a difference!)";
+            let message = "";
+
+            // Handle cases where the item has no caloric impact or frequency isn't specified for time stats
+            if (calculatedFatGainGramsPerPersonPerPackage <= 0) {
+                if (currentStatisticIndex === 0 || currentStatisticIndex === 1) {
+                     message = `Great choice! This item (your share) doesn't contribute to fat gain, so you're already on a good track!`;
+                } else if (consumptionsPerDayGlobal <=0 && (currentStatisticIndex === 2 || currentStatisticIndex === 3)) {
+                    message = `This item (your share) has no caloric impact. To see time-based benefits for other items, please specify consumption frequency.`;
+                } else { // Item has no caloric impact, but frequency is given (for consistency)
+                     message = `Excellent! Since your share of this item has no caloric impact, you're avoiding any potential fat gain from it.`;
+                }
+            } else { // Item has caloric impact
+                switch (currentStatisticIndex) {
+                    case 0: // Grams of body fat avoided per person per package share
+                        message = `By skipping your share of this package, you're avoiding a potential <strong>${calculatedFatGainGramsPerPersonPerPackage.toFixed(1)} g</strong> of body fat. Well done!`;
+                        break;
+                    case 1: // Number of package shares to avoid 1 kg fat
+                        const packagesFor1kgFat = 1000 / calculatedFatGainGramsPerPersonPerPackage;
+                        if (packagesFor1kgFat > 20000) {
+                             message = `Each choice adds up! By consistently skipping items like this, you're preventing a <strong>significant amount</strong> of potential fat gain over time.`;
+                        } else {
+                             message = `Keep it up! By choosing to avoid about <strong>${packagesFor1kgFat.toFixed(1)} shares</strong> like this, you could prevent gaining 1 kg of body fat.`;
+                        }
+                        break;
+                    case 2: // How much longer it would take to gain 1kg by avoiding this
+                        if (consumptionsPerDayGlobal <= 0) {
+                            message = `To see how this choice impacts your timeline, please enter how often you might have consumed it.`;
+                        } else {
+                            const fatGainPerDay = calculatedFatGainGramsPerPersonPerPackage * consumptionsPerDayGlobal;
+                            const daysToGain1kg = 1000 / fatGainPerDay;
+                            message = `Smart move! By not consuming this regularly, you're delaying potential fat gain. It could take <strong>${formatDays(daysToGain1kg)}</strong> of consuming this for 1kg of fat to accumulate.`;
+                        }
+                        break;
+                    case 3: // Fat avoided per person in a year
+                         if (consumptionsPerDayGlobal <= 0) {
+                            message = `Curious about yearly impact? Enter how often you might have consumed this to see how much you could avoid.`;
+                        } else {
+                            const fatAvoidedPerYear = (calculatedFatGainGramsPerPersonPerPackage * consumptionsPerDayGlobal * DAYS_IN_YEAR);
+                            if (fatAvoidedPerYear <=0.1) {
+                                message = `Every bit counts! While this specific item's yearly impact is small, consistent good choices add up to big results!`;
+                            } else if (fatAvoidedPerYear < 1000) {
+                                 message = `Fantastic! By regularly skipping your share of this, you could avoid about <strong>${fatAvoidedPerYear.toFixed(1)} g</strong> of body fat in a year!`;
+                            } else {
+                                 message = `Amazing progress! By consistently avoiding your share of this, you could prevent gaining approx. <strong>${(fatAvoidedPerYear / 1000).toFixed(2)} kg</strong> of body fat in a year!`;
+                            }
+                        }
+                        break;
+                    default:
+                        message = "Let's see the positive impact of your choices!";
+                }
+            }
+            resultText.innerHTML = `<span>${message}</span>`;
+        }
+
+        // --- Listen for form submission ---
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            errorArea.textContent = '';
+            currentStatisticIndex = 0; 
+
+            const packageQuantity = parseFloat(document.getElementById('packageQuantity').value);
+            const energyPerServing = parseFloat(document.getElementById('energyPerServing').value);
+            const servingSize = parseFloat(document.getElementById('servingSize').value);
+            const numberOfPeople = parseInt(document.getElementById('numberOfPeople').value) || 1;
+            const consumptionQuantityInput = document.getElementById('consumptionQuantity').value;
+            const consumptionQuantity = consumptionQuantityInput === '' ? 0 : parseFloat(consumptionQuantityInput);
+            const consumptionPeriod = document.getElementById('consumptionPeriod').value;
+
+            let errors = [];
+            if (isNaN(packageQuantity) || packageQuantity <= 0) errors.push("Total Quantity must be positive.");
+            if (isNaN(energyPerServing) || energyPerServing < 0) errors.push("Energy per Serving must be non-negative.");
+            if (isNaN(servingSize) || servingSize <= 0) errors.push("Serving Size must be positive.");
+            if (packageQuantity > 0 && servingSize > 0 && servingSize > packageQuantity) errors.push("Serving Size cannot exceed Package Quantity.");
+            if (isNaN(numberOfPeople) || numberOfPeople < 1) errors.push("Number of People must be at least 1.");
+            if (!isNaN(consumptionQuantity) && consumptionQuantity < 0) errors.push("Consumption Times cannot be negative.");
+
+            if (errors.length > 0) {
+                errorArea.innerHTML = errors.map(err => `<p class="error-message">${err}</p>`).join('');
+                resultArea.classList.add('hidden');
+                return;
+            }
+
+            const servingsInPackage = packageQuantity / servingSize;
+            const totalEnergyInPackage = servingsInPackage * energyPerServing;
+            const potentialFatGainGramsFullPackage = totalEnergyInPackage / KCAL_PER_GRAM_FAT;
+            calculatedFatGainGramsPerPersonPerPackage = potentialFatGainGramsFullPackage / numberOfPeople;
+
+            consumptionsPerDayGlobal = 0;
+            if (!isNaN(consumptionQuantity) && consumptionQuantity > 0) {
+                let daysInPeriod = 1;
+                if (consumptionPeriod === 'week') daysInPeriod = 7;
+                else if (consumptionPeriod === 'month') daysInPeriod = DAYS_IN_MONTH_AVG;
+                consumptionsPerDayGlobal = consumptionQuantity / daysInPeriod;
+            }
+
+             if (calculatedFatGainGramsPerPersonPerPackage >= 0) {
+                updateDisplayedStatistic();
+                resultArea.classList.remove('hidden');
+            } else {
+                errorArea.innerHTML = `<p class="error-message">Could not calculate. Please check inputs.</p>`;
+                resultArea.classList.add('hidden');
+            }
+        });
+
+        resultArea.addEventListener('click', function() {
+            // Allow cycling even if fat gain is 0, as messages are now tailored for that.
+            currentStatisticIndex = (currentStatisticIndex + 1) % 4;
+            updateDisplayedStatistic();
+        });
+    </script>
+</body>
+</html>
+
